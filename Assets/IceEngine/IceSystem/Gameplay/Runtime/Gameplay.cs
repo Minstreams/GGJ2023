@@ -9,5 +9,14 @@ namespace Ice
         #endregion
 
         public static GMap map;
+
+        #region 选择
+        public static Selectable SelectedObject { get; set; }
+        public static void SelectObject(Selectable obj)
+        {
+            SelectedObject = obj;
+            PanelSelectedObject.UpdateContent();
+        }
+        #endregion
     }
 }

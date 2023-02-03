@@ -9,11 +9,17 @@ namespace IceEngine
     /// </summary>
     public abstract class Selectable : MapObject
     {
-        public static Selectable SelectedObject { get; private set; }
+        [Group("Selectable")]
+        public string displayName;
+        [Multiline]
+        public string displayDescription;
+
+        public List<OptionItem> options = new List<OptionItem>();
 
         void OnMouseDown()
         {
             Ice.Gameplay.Log("Select" + gameObject.name);
+            Ice.Gameplay.SelectObject(this);
         }
     }
 }
