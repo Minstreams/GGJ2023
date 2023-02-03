@@ -10,16 +10,16 @@ namespace IceEngine
         public int Width { get; private set; }
         public int Height { get; private set; }
 
-        public GMap(int width, int height)
+        public GMap(Vector2Int size)
         {
-            Width = width;
-            Height = height;
+            Width = size.x;
+            Height = size.y;
 
             //tex = new Texture2D(width, height);
-            data = new GMapUnit[width, height];
-            for (int x = 0; x < width; x++)
+            data = new GMapUnit[size.x, size.y];
+            for (int x = 0; x < size.x; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < size.y; y++)
                 {
                     data[x, y] = new GMapUnit(x, y);
                 }

@@ -17,19 +17,36 @@ namespace IceEngine
 
         public Vector2Int Pos => transform.position.ToGridPos();
 
-        protected virtual void Start() => UpdateMap();
+        GMap Map => Ice.Gameplay.map;
+        Vector2Int? lastPos = null;
 
-        [Button]
-        public void UpdateMap()
+        public bool IsOnMap { get; set; } = true;
+
+        public void ForEachUnit(System.Action<GMapUnit> action, Vector2Int? posOverride = null)
         {
-            var map = Ice.Gameplay.map;
-
+            var pos = posOverride ?? Pos;
             for (int y = 0; y < size.y; ++y)
             {
                 for (int x = 0; x < size.x; ++x)
                 {
-                    map[Pos.x + x - center.x, Pos.y + y - center.y].type = mapType;
+                    action(Map[pos.x + x - center.x, pos.y + y - center.y]);
                 }
+            }
+        }
+
+        protected virtual void LateUpdate()
+        {
+            if (!IsOnMap) return;
+            if (lastPos == null)
+            {
+                lastPos = Pos;
+                ForEachUnit(u => u.type = mapType);
+            }
+            else if (lastPos.Value != Pos)
+            {
+                ForEachUnit(u => u.type = GMapType.Path, lastPos);
+                ForEachUnit(u => u.type = mapType);
+                lastPos = Pos;
             }
         }
 

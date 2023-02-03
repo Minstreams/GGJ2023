@@ -33,5 +33,18 @@ namespace IceEngine
                 Astar.FindingPath(Pos, target.Pos, path);
             }
         }
+
+        private void OnDrawGizmos()
+        {
+            using (new GizmosColorScope(Color.cyan))
+            {
+                Vector2Int lastPos = Pos;
+                foreach (var p in path)
+                {
+                    Gizmos.DrawLine(p.ToWorldPos() + Vector3.one * 0.5f, lastPos.ToWorldPos() + Vector3.one * 0.5f);
+                    lastPos = p;
+                }
+            }
+        }
     }
 }

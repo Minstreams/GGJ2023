@@ -18,6 +18,7 @@ namespace IceEngine
 
         void OnMouseDown()
         {
+            if (!IsOnMap) return;
             Ice.Gameplay.Log("Select" + gameObject.name);
             Ice.Gameplay.SelectObject(this);
         }

@@ -7,5 +7,7 @@ namespace IceEngine.Internal
         #region ThemeColor
         public override Color DefaultThemeColor => new(0.07464188f, 0.1167115f, 0.214792f);
         #endregion
+
+        public Vector2Int mapSize = new Vector2Int(64, 64);
     }
 }

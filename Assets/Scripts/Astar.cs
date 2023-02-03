@@ -64,8 +64,32 @@ namespace IceEngine
 
                 var curCost = costDic[currentNode];
 
+                if (loopCount++ > 16)
+                {
+                    foreach (var node in closeSet)
+                    {
+                        if (node == currentNode) continue;
+
+                        var curCost2 = costDic[currentNode];
+                        var cost = costDic[node];
+
+                        if (cost.h < curCost2.h)
+                        {
+                            currentNode = node;
+                        }
+                    }
+
+                    path.Clear();
+                    while (currentNode != startNode)
+                    {
+                        path.Insert(0, currentNode.pos);
+                        currentNode = parentDic[currentNode];
+                    }
+                    return;
+                }
+
                 // 如果是目的节点，返回
-                if (currentNode == endNode || loopCount++ > 16)
+                if (currentNode == endNode)
                 {
                     path.Clear();
                     while (currentNode != startNode)

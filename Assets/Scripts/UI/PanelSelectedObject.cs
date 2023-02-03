@@ -45,5 +45,34 @@ namespace IceEngine
                 optionObjs.Add(option);
             }
         }
+
+        private void OnDrawGizmos()
+        {
+            var map = Ice.Gameplay.map;
+            if (map == null) return;
+
+            for (int x = 0; x < map.Width; x++)
+            {
+                for (int y = 0; y < map.Height; y++)
+                {
+                    switch (map[x, y].type)
+                    {
+                        case GMapType.Collider:
+                            using (new GizmosColorScope(new Color(1, 0, 0, 0.5f)))
+                            {
+                                Gizmos.DrawCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                            }
+                            break;
+                        case GMapType.Path:
+                        default:
+                            using (new GizmosColorScope(Color.gray))
+                            {
+                                Gizmos.DrawWireCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                            }
+                            break;
+                    }
+                }
+            }
+        }
     }
 }

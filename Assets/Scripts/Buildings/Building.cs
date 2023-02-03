@@ -8,7 +8,5 @@ namespace IceEngine
     public class Building : Hurtable
     {
 
-
-
     }
 }

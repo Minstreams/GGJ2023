@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &132087045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6484855494409727979, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
+  m_PrefabInstance: {fileID: 692151239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dda9a582d46d849afff4f3f2f949bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &198697663
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198697663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 8, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,11 +349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6484855494409727976, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6484855494409727976, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6484855494409727976, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -380,6 +391,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingBase
       objectReference: {fileID: 0}
+    - target: {fileID: 6484855494409727979, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
+      propertyPath: options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484855494409727979, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
+      propertyPath: options.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f50ee1d7edbb1f44a7934460b0359d6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
 --- !u!1 &892666601
@@ -608,7 +627,7 @@ MonoBehaviour:
   displayDescription: 1212
   options: []
   maxHp: 0
-  target: {fileID: 0}
+  target: {fileID: 132087045}
   speed: 1
 --- !u!1001 &5236778161457023921
 PrefabInstance:

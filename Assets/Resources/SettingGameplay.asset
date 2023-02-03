@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: SettingGameplay
   m_EditorClassIdentifier: 
   themeColor: {r: 0.9433962, g: 0.17265925, b: 0.37910658, a: 1}
+  mapSize: {x: 64, y: 64}
