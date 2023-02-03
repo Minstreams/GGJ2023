@@ -8,8 +8,9 @@ namespace IceEngine
     {
 
         SpriteRenderer sr;
-        void Start()
+        protected override void Start()
         {
+            base.Start();
             sr = GetComponent<SpriteRenderer>();
         }
 

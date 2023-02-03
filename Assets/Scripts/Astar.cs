@@ -12,17 +12,22 @@ namespace IceEngine
         static Dictionary<GMapUnit, (int g, int h)> costDic = new Dictionary<GMapUnit, (int g, int h)>();
         static Dictionary<GMapUnit, GMapUnit> parentDic = new Dictionary<GMapUnit, GMapUnit>();
 
+        static GMap Map => Ice.Gameplay.map;
+        public static void FindingPath(Vector2Int startPos, Vector2Int endPos, List<Vector2Int> path) => FindingPath(Map[startPos], Map[endPos], path);
+
         /// <summary>
         /// A*算法，寻找最短路径
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
-        public static List<Vector2Int> FindingPath(GMapUnit startNode, GMapUnit endNode)
+        public static void FindingPath(GMapUnit startNode, GMapUnit endNode, List<Vector2Int> path)
         {
             int CalDis(Vector2Int a, Vector2Int b)
             {
                 var dx = Mathf.Abs(a.x - b.x);
+                if (dx > Map.Width * 0.5f) dx = Map.Width - dx;
                 var dy = Mathf.Abs(a.y - b.y);
+                if (dy > Map.Height * 0.5f) dy = Map.Height - dy;
                 return Mathf.Max(dx, dy) * 10 + Mathf.Min(dx, dy) * 4;
             }
 
@@ -34,6 +39,7 @@ namespace IceEngine
             openList.Add(startNode);
             costDic[startNode] = (0, CalDis(endNode.pos, startNode.pos));
 
+            int loopCount = 0;
             while (openList.Count > 0)
             {
                 // 寻找开启列表中的F最小的节点，如果F相同，选取H最小的
@@ -43,10 +49,10 @@ namespace IceEngine
                 {
                     if (node == currentNode) continue;
 
-                    var curCost = costDic[currentNode];
+                    var curCost2 = costDic[currentNode];
                     var cost = costDic[node];
 
-                    if (cost.g + cost.h < curCost.g + curCost.h)
+                    if (cost.g + cost.h < curCost2.g + curCost2.h)
                     {
                         currentNode = node;
                     }
@@ -56,16 +62,18 @@ namespace IceEngine
                 openList.Remove(currentNode);
                 closeSet.Add(currentNode);
 
+                var curCost = costDic[currentNode];
+
                 // 如果是目的节点，返回
-                if (currentNode == endNode)
+                if (currentNode == endNode || loopCount++ > 16)
                 {
-                    List<Vector2Int> path = new List<Vector2Int>();
+                    path.Clear();
                     while (currentNode != startNode)
                     {
                         path.Insert(0, currentNode.pos);
                         currentNode = parentDic[currentNode];
                     }
-                    return path;
+                    return;
                 }
 
                 // 搜索当前节点的所有相邻节点
@@ -82,7 +90,6 @@ namespace IceEngine
                         {
                             continue;
                         }
-                        var curCost = costDic[currentNode];
                         int gCost = curCost.g + CalDis(currentNode.pos, node.pos);
 
                         // 如果新路径到相邻点的距离更短 或者不在开启列表中
@@ -101,8 +108,6 @@ namespace IceEngine
                     }
                 }
             }
-
-            return null;
         }
     }
 }

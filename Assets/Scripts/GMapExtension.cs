@@ -10,8 +10,7 @@ namespace IceEngine
     /// </summary>
     public static class GMapExtension
     {
-
-
-        //public static 
+        public static Vector3 ToWorldPos(this Vector2Int gridPos) => new Vector3(gridPos.x, gridPos.y);
+        public static Vector2Int ToGridPos(this Vector3 worldPos) => new Vector2Int(Mathf.RoundToInt(worldPos.x), Mathf.RoundToInt(worldPos.y));
     }
 }

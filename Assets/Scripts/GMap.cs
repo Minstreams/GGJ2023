@@ -17,6 +17,13 @@ namespace IceEngine
 
             //tex = new Texture2D(width, height);
             data = new GMapUnit[width, height];
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    data[x, y] = new GMapUnit(x, y);
+                }
+            }
         }
 
         // actual data
@@ -24,12 +31,15 @@ namespace IceEngine
         GMapUnit[,] data = null;
 
 
+        public GMapUnit this[Vector2Int pos] => this[pos.x, pos.y];
         public GMapUnit this[int x, int y]
         {
             get
             {
-                if (x < 0 || x >= Width) x %= Width;
-                if (y < 0 || y >= Height) y %= Height;
+                while (x < 0) x += Width;
+                if (x >= Width) x %= Width;
+                while (y < 0) y += Height;
+                if (y >= Height) y %= Height;
                 return data[x, y];
                 //return tex.GetPixel(x, y);
             }
@@ -52,6 +62,12 @@ namespace IceEngine
         public GMapType type;
 
         public Vector2Int pos;
+
+        public GMapUnit(int x, int y)
+        {
+            pos = new Vector2Int(x, y);
+            type = GMapType.Path;
+        }
     }
 
     public enum GMapType
