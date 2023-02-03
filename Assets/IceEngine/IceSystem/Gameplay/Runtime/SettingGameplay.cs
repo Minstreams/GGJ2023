@@ -9,5 +9,6 @@ namespace IceEngine.Internal
         #endregion
 
         public Vector2Int mapSize = new Vector2Int(64, 64);
+        public int initMoney = 1000;
     }
 }

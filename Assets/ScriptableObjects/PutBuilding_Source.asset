@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b90c4e29d1c93f48a3c703c1badd30b, type: 3}
-  m_Name: OptionItem_PutBuilding
+  m_Name: PutBuilding_Source
   m_EditorClassIdentifier: 
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  tip: asdasd
+  tip: "\u8D44\u6E90\u5854"
   price: 100
   cd: 12
-  prefabBuilding: {fileID: 6484855494409727978, guid: ce09cc1b7eba7e749a599a6237cd83dd, type: 3}
+  prefabBuilding: {fileID: 578626656221675210, guid: 67e442a6b4fdc8f4f930f725542e41e0, type: 3}

@@ -57,22 +57,25 @@ namespace IceEngine
         /// <summary>
         /// 是否可通行
         /// </summary>
-        public bool IsPath => type == GMapType.Path;
-
-        public GMapType type;
+        public bool IsPath => Type == GMapType.Path;
+        public GMapType Type => obj != null ? obj.mapType : GMapType.Path;
 
         public Vector2Int pos;
+        public MapObject obj;
 
         public GMapUnit(int x, int y)
         {
             pos = new Vector2Int(x, y);
-            type = GMapType.Path;
         }
     }
 
     public enum GMapType
     {
         Path,
+        Building,
+        Robot,
+        Source,
+        Enemy,
         Collider,
     }
 }

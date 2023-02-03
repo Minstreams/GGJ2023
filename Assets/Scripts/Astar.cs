@@ -106,7 +106,7 @@ namespace IceEngine
                 {
                     for (int x = p.x - 1; x <= p.x + 1; ++x)
                     {
-                        var node = Ice.Gameplay.map[x, y];
+                        var node = Map[x, y];
                         if (node == currentNode) continue;
 
                         // 如果节点不可通过或者已在关闭列表中，跳出

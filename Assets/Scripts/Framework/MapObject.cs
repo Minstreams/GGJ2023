@@ -17,7 +17,7 @@ namespace IceEngine
 
         public Vector2Int Pos => transform.position.ToGridPos();
 
-        GMap Map => Ice.Gameplay.map;
+        protected GMap Map => Ice.Gameplay.map;
         Vector2Int? lastPos = null;
 
         public bool IsOnMap { get; set; } = true;
@@ -40,12 +40,12 @@ namespace IceEngine
             if (lastPos == null)
             {
                 lastPos = Pos;
-                ForEachUnit(u => u.type = mapType);
+                ForEachUnit(u => u.obj = this);
             }
             else if (lastPos.Value != Pos)
             {
-                ForEachUnit(u => u.type = GMapType.Path, lastPos);
-                ForEachUnit(u => u.type = mapType);
+                ForEachUnit(u => u.obj = null, lastPos);
+                ForEachUnit(u => u.obj = this);
                 lastPos = Pos;
             }
         }

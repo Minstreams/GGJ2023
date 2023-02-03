@@ -9,7 +9,7 @@ namespace IceEngine
     /// </summary>
     public abstract class Selectable : MapObject
     {
-        [Group("Selectable")]
+        [Group("功能")]
         public string displayName;
         [Multiline]
         public string displayDescription;
@@ -24,6 +24,17 @@ namespace IceEngine
             if (!IsOnMap) return;
             Ice.Gameplay.Log("Select" + gameObject.name);
             Ice.Gameplay.SelectObject(this);
+        }
+
+        public SimpleEvent onSelected;
+        public SimpleEvent onDiselected;
+        public void Select()
+        {
+            onSelected?.Invoke();
+        }
+        public void Diselect()
+        {
+            onDiselected?.Invoke();
         }
     }
 }

@@ -55,7 +55,7 @@ namespace IceEngine
             {
                 for (int y = 0; y < map.Height; y++)
                 {
-                    switch (map[x, y].type)
+                    switch (map[x, y].Type)
                     {
                         case GMapType.Collider:
                             using (new GizmosColorScope(new Color(1, 0, 0, 0.5f)))

@@ -14,7 +14,7 @@ namespace Ice
         static void Start()
         {
             Log("Start");
-            PanelStatus.UpdateStatus();
+            Money = Setting.initMoney;
         }
 
         #region 玩家数据
@@ -39,7 +39,9 @@ namespace Ice
         public static Selectable SelectedObject { get; set; }
         public static void SelectObject(Selectable obj)
         {
+            if (SelectedObject != null) SelectedObject.Diselect();
             SelectedObject = obj;
+            if (obj != null) obj.Select();
             PanelSelectedObject.UpdateContent();
         }
         #endregion
@@ -58,6 +60,7 @@ namespace Ice
             var building = GameObject.Instantiate(item.prefabBuilding);
             var mapComp = building.GetComponent<Building>();
             mapComp.IsOnMap = false;
+            mapComp.Select();
 
             while (true)
             {
@@ -81,6 +84,8 @@ namespace Ice
                     if (canPut)
                     {
                         mapComp.IsOnMap = true;
+                        mapComp.Diselect();
+                        mapComp.Build();
                         break;
                     }
                     else
