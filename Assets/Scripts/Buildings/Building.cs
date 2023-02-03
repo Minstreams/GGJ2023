@@ -9,7 +9,7 @@ namespace IceEngine
     {
         [Group("建筑")]
         public SimpleEvent onBuilt;
-        public float sellPrice = 100;
+        public int sellPrice = 100;
 
         public void Build()
         {
