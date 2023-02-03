@@ -5,9 +5,10 @@ using UnityEngine;
 namespace IceEngine
 {
     /// <summary>
-    /// 敌人巢穴
+    /// 地图上存在的基类，有体积
     /// </summary>
-    public class Nest : Hurtable
+    public abstract class MapObject : MonoBehaviour
     {
+
     }
 }
