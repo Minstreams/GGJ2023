@@ -50,6 +50,8 @@ namespace IceEngine
         public bool IsPath => type == GMapType.Path;
 
         public GMapType type;
+
+        public Vector2Int pos;
     }
 
     public enum GMapType
