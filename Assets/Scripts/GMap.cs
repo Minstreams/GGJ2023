@@ -15,24 +15,40 @@ public class GMap
         Width = width;
         Height = height;
 
-        tex = new Texture2D(width, height);
+        //tex = new Texture2D(width, height);
+        data = new GMapUnit[width, height];
     }
 
     // actual data
-    Texture2D tex;
+    //Texture2D tex;
+    GMapUnit[,] data = null;
 
-    public Color this[int x, int y]
+
+    public GMapUnit this[int x, int y]
     {
         get
         {
             if (x < 0 || x >= Width) x %= Width;
             if (y < 0 || y >= Height) y %= Height;
-            return tex.GetPixel(x, y);
+            return data[x, y];
+            //return tex.GetPixel(x, y);
         }
         set
         {
-            tex.SetPixel(x, y, value);
-            tex.Apply();
+            data[x, y] = value;
+            //tex.SetPixel(x, y, value);
+            //tex.Apply();
         }
     }
+}
+
+public class GMapUnit
+{
+    public GMapType Type;
+}
+
+public enum GMapType
+{
+    Empty,
+    Collider,
 }

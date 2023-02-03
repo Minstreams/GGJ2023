@@ -8,4 +8,6 @@ using UnityEngine;
 public static class GMapExtension
 {
 
+
+    //public static 
 }

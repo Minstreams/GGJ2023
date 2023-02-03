@@ -6,10 +6,6 @@
         // TODO: 存档问题
         #endregion
 
-        static void Start()
-        {
-            Log("Start");
-        }
-
+        public static GMap map;
     }
 }
