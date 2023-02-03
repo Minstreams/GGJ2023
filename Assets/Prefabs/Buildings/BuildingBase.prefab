@@ -65,10 +65,10 @@ MonoBehaviour:
   mapType: 1
   size: {x: 2, y: 2}
   center: {x: 1, y: 1}
+  mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: hj
   displayDescription: aksjdhakjsdhkjas
-  options:
-  - {fileID: 11400000, guid: c057e605256e14e4399e6e9cb16ac136, type: 2}
+  options: []
   maxHp: 100
 --- !u!1 &6484855494492908848
 GameObject:

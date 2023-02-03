@@ -14,6 +14,9 @@ namespace IceEngine
         [Multiline]
         public string displayDescription;
 
+        protected virtual string DisplayDescriptionExtra => "";
+        public string DisplayDescription => displayDescription + "\n" + DisplayDescriptionExtra;
+
         public List<OptionItem> options = new List<OptionItem>();
 
         void OnMouseDown()

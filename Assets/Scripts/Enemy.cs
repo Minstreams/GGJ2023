@@ -34,8 +34,9 @@ namespace IceEngine
             }
         }
 
-        private void OnDrawGizmos()
+        protected override void OnDrawGizmos()
         {
+            base.OnDrawGizmos();
             using (new GizmosColorScope(Color.cyan))
             {
                 Vector2Int lastPos = Pos;

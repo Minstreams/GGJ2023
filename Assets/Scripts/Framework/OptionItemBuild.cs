@@ -9,7 +9,7 @@ namespace IceEngine
     {
         public GameObject prefabBuilding;
 
-        public override void OnClick(Selectable obj)
+        public override void OnAct(Selectable obj)
         {
             Ice.Gameplay.PutBuilding(this);
         }

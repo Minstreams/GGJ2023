@@ -50,11 +50,11 @@ namespace IceEngine
             }
         }
 
-        protected virtual Color MapGizmoColor => Color.green;
-        protected virtual void OnDrawGizmosSelected()
+        public Color mapGizmoColor = new Color(0, 1, 0, 0.3f);
+        protected virtual void OnDrawGizmos()
         {
-            using var _ = new GizmosColorScope(MapGizmoColor);
-            Gizmos.DrawWireCube(transform.position + size.ToWorldPos() * 0.5f - center.ToWorldPos(), new Vector3(size.x, size.y, 1));
+            using var _ = new GizmosColorScope(mapGizmoColor);
+            Gizmos.DrawCube(transform.position + size.ToWorldPos() * 0.5f - center.ToWorldPos(), new Vector3(size.x, size.y, 1));
         }
     }
 }

@@ -34,7 +34,7 @@ namespace IceEngine
             var obj = Ice.Gameplay.SelectedObject;
 
             tName.text = obj.displayName;
-            tDescription.text = obj.displayDescription;
+            tDescription.text = obj.DisplayDescription;
 
             for (int i = 0; i < obj.options.Count; i++)
             {

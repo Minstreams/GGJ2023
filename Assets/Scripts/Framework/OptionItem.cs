@@ -4,15 +4,27 @@ using UnityEngine;
 
 namespace IceEngine
 {
-    [CreateAssetMenu(fileName = "OptionItem", menuName = "物品选项/默认")]
-    public class OptionItem : ScriptableObject
+    public abstract class OptionItem : ScriptableObject
     {
         public Sprite icon;
         public string tip;
 
-        public float price;
+        public int price;
         public float cd;
 
-        public virtual void OnClick(Selectable obj) { }
+        public virtual void OnClick(Selectable obj)
+        {
+            // price
+            if (Ice.Gameplay.Money >= price)
+            {
+                Ice.Gameplay.Money -= price;
+                OnAct(obj);
+            }
+            else
+            {
+                // TODO: 视觉表现
+            }
+        }
+        public abstract void OnAct(Selectable obj);
     }
 }
