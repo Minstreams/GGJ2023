@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bba9e54f8591744a67783db877850d, type: 3}
   m_Name: SettingGameplay
   m_EditorClassIdentifier: 
-  themeColor: {r: 0.2836663, g: 0.06433229, b: 0.1219415, a: 1}
+  themeColor: {r: 0.9433962, g: 0.17265925, b: 0.37910658, a: 1}
