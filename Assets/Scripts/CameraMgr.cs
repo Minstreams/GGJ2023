@@ -6,6 +6,10 @@ namespace IceEngine
 {
     public class CameraMgr : MonoBehaviour
     {
+#if UNITY_EDITOR
+        public bool canMove;
+#endif
+
         [Group("相机")]
         public float edgeSize;
         public float dragSpeed;
@@ -31,6 +35,15 @@ namespace IceEngine
                 focusPoint.position = Ice.Gameplay.SelectedObject.transform.position;
             }
 
+            // 滚轮缩放
+            Camera.main.orthographicSize =
+                Mathf.Clamp
+                (
+                    Camera.main.orthographicSize * (1 - (Input.mouseScrollDelta.y * scrollFactor)),
+                    scrollRange.x,
+                    scrollRange.y
+                );
+
             var right = Camera.main.transform.right;
             var fwd = Vector3.Cross(right, Vector3.up);
 
@@ -41,21 +54,16 @@ namespace IceEngine
             }
             else
             {
+#if UNITY_EDITOR
+                if (!canMove) return;
+#endif
+
                 // 贴边移动
                 var mp = Input.mousePosition;
                 float dx = mp.x > Screen.width - edgeSize ? 1 : mp.x < edgeSize ? -1 : 0;
                 float dy = mp.y > Screen.height - edgeSize ? 1 : mp.y < edgeSize ? -1 : 0;
                 focusPoint.position += moveSpeed * Time.deltaTime * (right * dx + fwd * dy);
             }
-
-            // 滚轮缩放
-            Camera.main.orthographicSize =
-                Mathf.Clamp
-                (
-                    Camera.main.orthographicSize * (1 - (Input.mouseScrollDelta.y * scrollFactor)),
-                    scrollRange.x,
-                    scrollRange.y
-                );
         }
     }
 }

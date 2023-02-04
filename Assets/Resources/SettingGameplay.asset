@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themeColor: {r: 0.9433962, g: 0.17265925, b: 0.37910658, a: 1}
   mapSize: {x: 512, y: 512}
-  initMoney: 1000
+  initMoney: 10000
   prefabScv: {fileID: 1481269195534070897, guid: 616adb4053229174eb9b7374385a966c, type: 3}
