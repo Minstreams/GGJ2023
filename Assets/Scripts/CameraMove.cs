@@ -13,8 +13,9 @@ namespace IceEngine
 
         private Vector3 camFollowPos;   //用于给摄像机赋值
 
-        private bool edgeScrolling = true;  //移动开关
-                                            // Start is called before the first frame update
+        public bool edgeScrolling = true;  //移动开关
+        
+        // Start is called before the first frame update
         void Start()
         {
             camFollowPos = myCamera.transform.position; //保存摄像机初始位置，移动是在初始位置的基础上计算
@@ -22,9 +23,10 @@ namespace IceEngine
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))    //移动开关
+            if (Ice.Gameplay.SelectedObject & Input.GetKeyDown(KeyCode.Space))    //定位到选中目标
             {
-                edgeScrolling = !edgeScrolling;
+                camFollowPos.x =  Ice.Gameplay.SelectedObject.transform.position.x;
+                camFollowPos.z = Ice.Gameplay.SelectedObject.transform.position.z;
             }
             if (edgeScrolling)  //如果打开
             {
@@ -32,21 +34,27 @@ namespace IceEngine
                 if (Input.mousePosition.x > Screen.width - edgeSize)//如果鼠标位置在右侧
                 {
                     camFollowPos.x += moveAmount * Time.deltaTime;//就向右移动
+                    camFollowPos.z -= moveAmount * Time.deltaTime;
                 }
                 if (Input.mousePosition.x < edgeSize)
                 {
                     camFollowPos.x -= moveAmount * Time.deltaTime;
+                    camFollowPos.z += moveAmount * Time.deltaTime;
                 }
                 if (Input.mousePosition.y > Screen.height - edgeSize)
                 {
                     camFollowPos.z += moveAmount * Time.deltaTime;
+                    camFollowPos.x += moveAmount * Time.deltaTime;
                 }
                 if (Input.mousePosition.y < edgeSize)
                 {
                     camFollowPos.z -= moveAmount * Time.deltaTime;
+                    camFollowPos.x -= moveAmount * Time.deltaTime;
                 }
                 myCamera.transform.position = camFollowPos;//刷新摄像机位置
             }
+
+
         }
     }
 }
