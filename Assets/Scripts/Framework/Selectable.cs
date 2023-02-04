@@ -26,8 +26,8 @@ namespace IceEngine
             Ice.Gameplay.SelectObject(this);
         }
 
-        public SimpleEvent onSelected;
-        public SimpleEvent onDiselected;
+        [IceprintPort] public SimpleEvent onSelected;
+        [IceprintPort] public SimpleEvent onDiselected;
         public void Select()
         {
             onSelected?.Invoke();

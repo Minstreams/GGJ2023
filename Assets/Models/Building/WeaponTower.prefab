@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1681563242452578034}
   - component: {fileID: -5718601687547293384}
   m_Layer: 0
-  m_Name: defensive tower
+  m_Name: WeaponTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 773517701922a0745be1b3eb73814798, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8608446
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 773517701922a0745be1b3eb73814798, type: 3}
       propertyPath: m_LocalPosition.y
@@ -96,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 773517701922a0745be1b3eb73814798, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.032673
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 773517701922a0745be1b3eb73814798, type: 3}
       propertyPath: m_LocalRotation.w
@@ -126,10 +126,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6034480803058315714, guid: 773517701922a0745be1b3eb73814798, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77beb9bed30c17b4ba1b1054755bd643, type: 2}
+    - target: {fileID: -2571118854743697038, guid: 773517701922a0745be1b3eb73814798, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 14136ded9727d5b4abdd0e71ae8c121f, type: 2}
+    - target: {fileID: -1990968323811559735, guid: 773517701922a0745be1b3eb73814798, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77beb9bed30c17b4ba1b1054755bd643, type: 2}
+    - target: {fileID: -1439730007547781893, guid: 773517701922a0745be1b3eb73814798, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77beb9bed30c17b4ba1b1054755bd643, type: 2}
     - target: {fileID: 919132149155446097, guid: 773517701922a0745be1b3eb73814798, type: 3}
       propertyPath: m_Name
-      value: defensive tower
+      value: model
       objectReference: {fileID: 0}
+    - target: {fileID: 1541998606474349963, guid: 773517701922a0745be1b3eb73814798, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77beb9bed30c17b4ba1b1054755bd643, type: 2}
+    - target: {fileID: 7071182760956848314, guid: 773517701922a0745be1b3eb73814798, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77beb9bed30c17b4ba1b1054755bd643, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 773517701922a0745be1b3eb73814798, type: 3}
 --- !u!4 &8338526352914168388 stripped

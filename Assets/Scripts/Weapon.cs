@@ -33,12 +33,14 @@ namespace IceEngine
             Hurtable hurtedTarget = target;
             Vector3 point = target.AimPos;
             var dir = (target.AimPos - transform.position).normalized;
+            Vector3 normal = -dir;
             Debug.DrawRay(transform.position, dir * 100, Color.red, 1);
 
             if (Physics.Raycast(new Ray(transform.position, dir), out var hit, 1000, mask))
             {
                 hurtedTarget = hit.collider.GetComponent<Hurtable>();
                 point = hit.point;
+                normal = hit.normal;
             }
 
             if (hurtedTarget != null) hurtedTarget.Hurt(power, parent);
@@ -47,6 +49,7 @@ namespace IceEngine
             {
                 rotRoot.transform.rotation = Quaternion.LookRotation(dir);
                 transRoot.transform.position = point;
+                transRoot.transform.rotation = Quaternion.LookRotation(normal);
                 onFire?.Invoke();
             }
         }

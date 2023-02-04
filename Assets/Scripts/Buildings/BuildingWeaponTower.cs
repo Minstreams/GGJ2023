@@ -14,7 +14,6 @@ namespace IceEngine
 
         public Hurtable Target { get; private set; }
 
-
         Weapon weapon;
         protected override void OnBuilt()
         {
@@ -66,6 +65,12 @@ namespace IceEngine
                     weapon.TryFire(Target);
                 }
             }
+        }
+
+        protected override void OnHurted(float delta, Hurtable attacker)
+        {
+            base.OnHurted(delta, attacker);
+            Target = attacker;
         }
 
         protected override void OnDrawGizmos()
