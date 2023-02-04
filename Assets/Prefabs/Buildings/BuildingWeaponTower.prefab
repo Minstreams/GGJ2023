@@ -182,22 +182,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
-    - target: {fileID: 881550521255093484, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 881550521255093486, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
-      propertyPath: power
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 881550521255093486, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
-      propertyPath: interval
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 881550521255093486, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
-      propertyPath: mask.m_Bits
-      value: 833
-      objectReference: {fileID: 0}
     - target: {fileID: 881550521255093487, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -241,18 +225,6 @@ PrefabInstance:
     - target: {fileID: 881550521255093487, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 881550521549089442, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263528648104954736, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5774708631073648753, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}

@@ -51,24 +51,12 @@ MonoBehaviour:
   power: 1
   mask:
     serializedVersion: 2
-    m_Bits: 705
+    m_Bits: 833
   rotRoot: {fileID: 3687843228986484999}
   transRoot: {fileID: 7650076054777444069}
   onFire:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 231626718476292903}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: 
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 7247344053665693936}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Emit
@@ -299,7 +287,7 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
 --- !u!114 &5472130548728471738
 MonoBehaviour:
@@ -384,11 +372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 1.2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.9
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.size
@@ -400,15 +388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.7962264
+      value: 0.98039216
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 1
+      value: 0.50980395
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.97144836
+      value: 0.050980393
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
       propertyPath: InitialModule.startSize.minMaxState
@@ -480,11 +468,6 @@ ParticleSystem:
 --- !u!4 &231626718476193543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
-  m_PrefabInstance: {fileID: 231626718476326277}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &231626718476292903 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
   m_PrefabInstance: {fileID: 231626718476326277}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7247344053650890530

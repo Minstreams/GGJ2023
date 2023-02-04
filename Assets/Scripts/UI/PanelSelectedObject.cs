@@ -46,51 +46,51 @@ namespace IceEngine
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            var map = Ice.Gameplay.map;
-            if (map == null) return;
+        //private void OnDrawGizmos()
+        //{
+        //    var map = Ice.Gameplay.map;
+        //    if (map == null) return;
 
-            for (int x = 0; x < map.Width; x++)
-            {
-                for (int y = 0; y < map.Height; y++)
-                {
-                    switch (map[x, y].Type)
-                    {
-                        case GMapType.Collider:
-                            using (new GizmosColorScope(new Color(1, 0, 0, 0.5f)))
-                            {
-                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
-                            }
-                            break;
-                        case GMapType.Robot:
-                            using (new GizmosColorScope(new Color(1, 0.75f, 0, 0.5f)))
-                            {
-                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
-                            }
-                            break;
-                        case GMapType.Building:
-                            using (new GizmosColorScope(new Color(0, 0.75f, 1, 0.5f)))
-                            {
-                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
-                            }
-                            break;
-                        case GMapType.Source:
-                            using (new GizmosColorScope(new Color(0, 1, 1, 0.5f)))
-                            {
-                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
-                            }
-                            break;
-                        case GMapType.Path:
-                        default:
-                            using (new GizmosColorScope(Color.gray))
-                            {
-                                Gizmos.DrawWireCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
-                            }
-                            break;
-                    }
-                }
-            }
-        }
+        //    for (int x = 0; x < map.Width; x++)
+        //    {
+        //        for (int y = 0; y < map.Height; y++)
+        //        {
+        //            switch (map[x, y].Type)
+        //            {
+        //                case GMapType.Collider:
+        //                    using (new GizmosColorScope(new Color(1, 0, 0, 0.5f)))
+        //                    {
+        //                        Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
+        //                    }
+        //                    break;
+        //                case GMapType.Robot:
+        //                    using (new GizmosColorScope(new Color(1, 0.75f, 0, 0.5f)))
+        //                    {
+        //                        Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
+        //                    }
+        //                    break;
+        //                case GMapType.Building:
+        //                    using (new GizmosColorScope(new Color(0, 0.75f, 1, 0.5f)))
+        //                    {
+        //                        Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
+        //                    }
+        //                    break;
+        //                case GMapType.Source:
+        //                    using (new GizmosColorScope(new Color(0, 1, 1, 0.5f)))
+        //                    {
+        //                        Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
+        //                    }
+        //                    break;
+        //                case GMapType.Path:
+        //                default:
+        //                    using (new GizmosColorScope(Color.gray))
+        //                    {
+        //                        Gizmos.DrawWireCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
+        //                    }
+        //                    break;
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
