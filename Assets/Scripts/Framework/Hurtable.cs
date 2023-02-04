@@ -32,6 +32,7 @@ namespace IceEngine
         }
         public void Hurt(float delta, Hurtable attacker)
         {
+            if (!IsOnMap) return;
             onHurted?.Invoke(delta);
             OnHurted(delta, attacker);
             HP -= delta;
