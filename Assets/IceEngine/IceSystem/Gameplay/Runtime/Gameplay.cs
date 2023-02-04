@@ -67,11 +67,12 @@ namespace Ice
                 yield return 0;
 
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                var pos = ray.origin - ray.direction * ray.origin.z / ray.direction.z;
+                if (Physics.Raycast(ray, out var hit, 1000, 1 << 6 /*Terrain*/))
+                {
+                    var pos = hit.point.ToGridPos();
 
-                pos.x = Mathf.Round(pos.x);
-                pos.y = Mathf.Round(pos.y);
-                building.transform.position = pos;
+                    building.transform.position = new Vector3(pos.x, map[pos].height, pos.y);
+                }
 
                 if (Input.GetMouseButtonDown(0))
                 {

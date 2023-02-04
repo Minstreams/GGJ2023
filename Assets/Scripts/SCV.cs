@@ -16,16 +16,26 @@ namespace IceEngine
         public BuildingSourceTower Tower { get; set; }
 
         List<Vector2Int> path = new List<Vector2Int>();
-        public void Go(Source target, float speed)
+        public bool Go(Source target, float speed)
         {
-            Target = target;
-            Speed = speed;
-            Money = 0;
+            if (Astar.FindingPath(Pos, target.Pos, path, mapType, 32))
+            {
+                Target = target;
+                Speed = speed;
+                Money = 0;
 
-            target.CurSCV = this;
+                target.CurSCV = this;
 
-            Astar.FindingPath(Pos, target.Pos, path, mapType);
-            StartCoroutine(_Go());
+                StartCoroutine(_Go());
+
+                return true;
+            }
+            else
+            {
+                Tower.RecycleSCV(this);
+
+                return false;
+            }
         }
 
         IEnumerator _Go()

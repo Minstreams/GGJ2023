@@ -61,7 +61,7 @@ namespace IceEngine
         protected virtual void OnDrawGizmos()
         {
             using var _ = new GizmosColorScope(mapGizmoColor);
-            Gizmos.DrawCube(transform.position + size.ToWorldPos() * 0.5f - center.ToWorldPos(), new Vector3(size.x, size.y, 1));
+            Gizmos.DrawCube(transform.position + size.ToWorldPos() * 0.5f - new Vector3(0.5f, 0, 0.5f) - center.ToWorldPos(), new Vector3(size.x, 1, size.y));
         }
     }
 }

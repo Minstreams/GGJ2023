@@ -935,13 +935,13 @@ namespace IceEditor
                     foreach ((Type t, var callback) in hierarchyItemGUICallbackMap)
                     {
                         var comps = go.GetComponents(t);
-                        foreach (var comp in comps) callback?.Invoke(comp, selectionRect);
+                        foreach (var comp in comps) if (comp != null) callback?.Invoke(comp, selectionRect);
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                Debug.Log("AA");
+                Debug.Log(ex.Message);
             }
         }
         #endregion

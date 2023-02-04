@@ -13,14 +13,14 @@ namespace IceEngine
         static Dictionary<GMapUnit, GMapUnit> parentDic = new Dictionary<GMapUnit, GMapUnit>();
 
         static GMap Map => Ice.Gameplay.map;
-        public static void FindingPath(Vector2Int startPos, Vector2Int endPos, List<Vector2Int> path, GMapType type = GMapType.Path) => FindingPath(Map[startPos], Map[endPos], path, type);
+        public static bool FindingPath(Vector2Int startPos, Vector2Int endPos, List<Vector2Int> path, GMapType type = GMapType.Path, int loopTimeOverride = 16) => FindingPath(Map[startPos], Map[endPos], path, type, loopTimeOverride);
 
         /// <summary>
         /// A*算法，寻找最短路径
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
-        public static void FindingPath(GMapUnit startNode, GMapUnit endNode, List<Vector2Int> path, GMapType type = GMapType.Path)
+        public static bool FindingPath(GMapUnit startNode, GMapUnit endNode, List<Vector2Int> path, GMapType type = GMapType.Path, int loopTimeOverride = 16)
         {
             int CalDis(Vector2Int a, Vector2Int b)
             {
@@ -64,7 +64,7 @@ namespace IceEngine
 
                 var curCost = costDic[currentNode];
 
-                if (loopCount++ > 16)
+                if (loopCount++ > loopTimeOverride)
                 {
                     foreach (var node in closeSet)
                     {
@@ -85,7 +85,7 @@ namespace IceEngine
                         path.Insert(0, currentNode.pos);
                         currentNode = parentDic[currentNode];
                     }
-                    return;
+                    return false;
                 }
 
                 // 如果是目的节点，返回
@@ -97,7 +97,7 @@ namespace IceEngine
                         path.Insert(0, currentNode.pos);
                         currentNode = parentDic[currentNode];
                     }
-                    return;
+                    return true;
                 }
 
                 // 搜索当前节点的所有相邻节点
@@ -132,6 +132,8 @@ namespace IceEngine
                     }
                 }
             }
+
+            return false;
         }
     }
 }

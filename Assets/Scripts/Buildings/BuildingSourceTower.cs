@@ -58,9 +58,7 @@ namespace IceEngine
                         {
                             // 派出机器人逻辑
                             var scv = ProduceSCV();
-                            scv.Go(s, speed);
-
-                            return true;
+                            return scv.Go(s, speed);
                         }
                         return false;
                     }

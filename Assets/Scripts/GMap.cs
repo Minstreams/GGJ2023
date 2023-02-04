@@ -70,7 +70,7 @@ namespace IceEngine
         {
             return t switch
             {
-                GMapType.Robot => Type == GMapType.Path || Type == GMapType.Building,
+                GMapType.Robot => Type == GMapType.Path || Type == GMapType.Building || Type == GMapType.Source,
                 _ => Type == GMapType.Path
             };
         }
@@ -89,10 +89,15 @@ namespace IceEngine
 
         public Vector2Int pos;
         public MapObject obj;
+        public float height;
 
         public GMapUnit(int x, int y)
         {
             pos = new Vector2Int(x, y);
+            if (Physics.Raycast(new Ray(new Vector3(pos.x, 128, pos.y), Vector3.down), out var hit, 1000, 1 << 6))
+            {
+                height = hit.point.y;
+            }
         }
     }
 
