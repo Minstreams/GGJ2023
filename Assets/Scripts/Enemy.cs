@@ -17,15 +17,7 @@ namespace IceEngine
             if (path.Any() && Pos == path[0]) path.RemoveAt(0);
             if (path.Any())
             {
-                var vTarget = path[0].ToWorldPos() - transform.position;
-                int w = Ice.Gameplay.map.Width;
-                int h = Ice.Gameplay.map.Height;
-                while (vTarget.x > w * 0.5f) vTarget.x -= w;
-                while (vTarget.x < -w * 0.5f) vTarget.x += w;
-                while (vTarget.y > h * 0.5f) vTarget.y -= h;
-                while (vTarget.y < -h * 0.5f) vTarget.y += h;
-
-                transform.position += vTarget.normalized * Time.deltaTime * speed;
+                transform.position += Map.GetDirection(path[0].ToWorldPos() - transform.position) * Time.deltaTime * speed;
             }
 
             if (target != null)

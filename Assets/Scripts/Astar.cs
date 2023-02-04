@@ -13,14 +13,14 @@ namespace IceEngine
         static Dictionary<GMapUnit, GMapUnit> parentDic = new Dictionary<GMapUnit, GMapUnit>();
 
         static GMap Map => Ice.Gameplay.map;
-        public static void FindingPath(Vector2Int startPos, Vector2Int endPos, List<Vector2Int> path) => FindingPath(Map[startPos], Map[endPos], path);
+        public static void FindingPath(Vector2Int startPos, Vector2Int endPos, List<Vector2Int> path, GMapType type = GMapType.Path) => FindingPath(Map[startPos], Map[endPos], path, type);
 
         /// <summary>
         /// A*算法，寻找最短路径
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
-        public static void FindingPath(GMapUnit startNode, GMapUnit endNode, List<Vector2Int> path)
+        public static void FindingPath(GMapUnit startNode, GMapUnit endNode, List<Vector2Int> path, GMapType type = GMapType.Path)
         {
             int CalDis(Vector2Int a, Vector2Int b)
             {
@@ -110,7 +110,7 @@ namespace IceEngine
                         if (node == currentNode) continue;
 
                         // 如果节点不可通过或者已在关闭列表中，跳出
-                        if (!node.IsPath || closeSet.Contains(node))
+                        if (!node.IsPath(type) || closeSet.Contains(node))
                         {
                             continue;
                         }

@@ -33,21 +33,28 @@ namespace IceEngine
                 }
             }
         }
-
         protected virtual void LateUpdate()
         {
             if (!IsOnMap) return;
             if (lastPos == null)
             {
                 lastPos = Pos;
-                ForEachUnit(u => u.obj = this);
+                ForEachUnit(u => { if (u.obj == null) u.obj = this; });
             }
             else if (lastPos.Value != Pos)
             {
-                ForEachUnit(u => u.obj = null, lastPos);
-                ForEachUnit(u => u.obj = this);
+                ForEachUnit(u => { if (u.obj == this) u.obj = null; }, lastPos);
+                ForEachUnit(u => { if (u.obj == null) u.obj = this; });
                 lastPos = Pos;
             }
+        }
+        protected virtual void OnDestroy()
+        {
+            ForEachUnit(u => { if (u.obj == this) u.obj = null; });
+        }
+        protected virtual void OnDisable()
+        {
+            ForEachUnit(u => { if (u.obj == this) u.obj = null; });
         }
 
         public Color mapGizmoColor = new Color(0, 1, 0, 0.3f);

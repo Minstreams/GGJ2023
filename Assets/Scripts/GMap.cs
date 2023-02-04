@@ -50,6 +50,15 @@ namespace IceEngine
                 //tex.Apply();
             }
         }
+
+        public Vector3 GetDirection(Vector3 dir)
+        {
+            while (dir.x > Width * 0.5f) dir.x -= Width;
+            while (dir.x < -Width * 0.5f) dir.x += Width;
+            while (dir.y > Height * 0.5f) dir.y -= Height;
+            while (dir.y < -Height * 0.5f) dir.y += Height;
+            return dir.normalized;
+        }
     }
 
     public class GMapUnit
@@ -57,7 +66,14 @@ namespace IceEngine
         /// <summary>
         /// 是否可通行
         /// </summary>
-        public bool IsPath => Type == GMapType.Path;
+        public bool IsPath(GMapType t = GMapType.Path)
+        {
+            return t switch
+            {
+                GMapType.Robot => Type == GMapType.Path || Type == GMapType.Building,
+                _ => Type == GMapType.Path
+            };
+        }
         public GMapType Type => obj != null ? obj.mapType : GMapType.Path;
 
         public Vector2Int pos;

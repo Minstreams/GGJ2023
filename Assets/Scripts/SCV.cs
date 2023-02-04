@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace IceEngine
@@ -10,10 +11,63 @@ namespace IceEngine
     public class SCV : Selectable
     {
         public Source Target { get; private set; }
+        public float Speed { get; private set; }
+        public int Money { get; private set; }
+        public BuildingSourceTower Tower { get; set; }
 
-        public void Go()
+        List<Vector2Int> path = new List<Vector2Int>();
+        public void Go(Source target, float speed)
         {
+            Target = target;
+            Speed = speed;
+            Money = 0;
 
+            target.CurSCV = this;
+
+            Astar.FindingPath(Pos, target.Pos, path, mapType);
+            StartCoroutine(_Go());
+        }
+
+        IEnumerator _Go()
+        {
+            if (!path.Any())
+            {
+                throw new System.Exception("机器人没有找到路！");
+            }
+
+            int pathId = 0;
+            while (true)
+            {
+                yield return 0;
+                if (Pos == path[pathId]) ++pathId;
+
+                if (pathId >= path.Count)
+                {
+                    // 到了，收集到资源
+                    Money += Target.money;
+                    Destroy(Target.gameObject);
+                    --pathId;
+                    break;
+                }
+
+                transform.position += Map.GetDirection(path[pathId].ToWorldPos() - transform.position) * Time.deltaTime * Speed;
+            }
+
+            while (true)
+            {
+                yield return 0;
+                if (Pos == path[pathId]) --pathId;
+
+                if (pathId < 0)
+                {
+                    // 回家了
+                    Ice.Gameplay.Money += Money;
+                    Tower.RecycleSCV(this);
+                    break;
+                }
+
+                transform.position += Map.GetDirection(path[pathId].ToWorldPos() - transform.position) * Time.deltaTime * Speed;
+            }
         }
     }
 }

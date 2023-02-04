@@ -10,5 +10,7 @@ namespace IceEngine.Internal
 
         public Vector2Int mapSize = new Vector2Int(64, 64);
         public int initMoney = 1000;
+
+        public GameObject prefabScv;
     }
 }

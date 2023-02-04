@@ -63,6 +63,18 @@ namespace IceEngine
                                 Gizmos.DrawCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
                             }
                             break;
+                        case GMapType.Robot:
+                            using (new GizmosColorScope(new Color(1, 0.75f, 0, 0.5f)))
+                            {
+                                Gizmos.DrawCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                            }
+                            break;
+                        case GMapType.Building:
+                            using (new GizmosColorScope(new Color(0, 0.75f, 1, 0.5f)))
+                            {
+                                Gizmos.DrawCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                            }
+                            break;
                         case GMapType.Path:
                         default:
                             using (new GizmosColorScope(Color.gray))

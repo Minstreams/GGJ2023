@@ -12,6 +12,8 @@ namespace IceEngine
         [Group("Source")]
         public int money;
 
+        public SCV CurSCV { get; set; }
+
         protected override string DisplayDescriptionExtra => $"资源量：{money}";
     }
 }
