@@ -50,6 +50,7 @@ MonoBehaviour:
   mapType: 4
   size: {x: 1, y: 1}
   center: {x: 0, y: 0}
+  viewRange: 0
   mapGizmoColor: {r: 1, g: 0.02934311, b: 0, a: 0.3}
   displayName: "\u654C\u4EBA"
   displayDescription: "\u5B9E\u6253\u5B9E\u6253\u7B97"
@@ -63,6 +64,9 @@ MonoBehaviour:
   maxHp: 10
   aimOffset: {x: 0, y: 0, z: 0}
   onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurted:
     m_PersistentCalls:
       m_Calls: []
   speed: 5

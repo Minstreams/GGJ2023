@@ -146,6 +146,7 @@ MonoBehaviour:
   mapType: 3
   size: {x: 1, y: 1}
   center: {x: 0, y: 0}
+  viewRange: 0
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: sasa
   displayDescription: asd

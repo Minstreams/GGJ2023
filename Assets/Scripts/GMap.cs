@@ -24,12 +24,24 @@ namespace IceEngine
                     data[x, y] = new GMapUnit(x, y);
                 }
             }
+
+            maskTex = new Texture2D(Width, Height, TextureFormat.RGBA32, false, true);
+            for (int y = 0; y < Height; y++)
+            {
+                for (int x = 0; x < Width; x++)
+                {
+                    maskTex.SetPixel(x, y, Color.black);
+                }
+            }
+            maskTex.Apply();
+            Shader.SetGlobalTexture("_GMap", maskTex);
+            Shader.SetGlobalVector("_GMapVector", new Vector4(Width, Height, 0, 0));
         }
 
         // actual data
         //Texture2D tex;
         GMapUnit[,] data = null;
-
+        public Texture2D maskTex = null;
 
         public GMapUnit this[Vector2Int pos] => this[pos.x, pos.y];
         public GMapUnit this[int x, int y]
@@ -90,6 +102,20 @@ namespace IceEngine
         public Vector2Int pos;
         public MapObject obj;
         public float height;
+
+        int _visibility;
+        public int Visibility
+        {
+            get => _visibility; set
+            {
+                if (value != _visibility)
+                {
+                    _visibility = value;
+                    Ice.Gameplay.map.maskTex.SetPixel(pos.x, pos.y, value > 0 ? Color.white : Color.black);
+                    Ice.Gameplay.map.maskTex.Apply();
+                }
+            }
+        }
 
         public GMapUnit(int x, int y)
         {

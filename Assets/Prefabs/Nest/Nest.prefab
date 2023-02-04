@@ -133,6 +133,7 @@ MonoBehaviour:
   mapType: 0
   size: {x: 3, y: 3}
   center: {x: 1, y: 1}
+  viewRange: 0
   mapGizmoColor: {r: 1, g: 0.108272806, b: 0, a: 0.3}
   displayName: asd
   displayDescription: asdasd
@@ -146,6 +147,9 @@ MonoBehaviour:
   maxHp: 500
   aimOffset: {x: 0, y: 0, z: 0}
   onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurted:
     m_PersistentCalls:
       m_Calls: []
   interval: 1

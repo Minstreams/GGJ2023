@@ -133,6 +133,7 @@ MonoBehaviour:
   mapType: 1
   size: {x: 4, y: 4}
   center: {x: 2, y: 2}
+  viewRange: 15
   mapGizmoColor: {r: 1, g: 0.9206716, b: 0, a: 0.3}
   displayName: 
   displayDescription: 
