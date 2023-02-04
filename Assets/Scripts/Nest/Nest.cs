@@ -43,26 +43,27 @@ namespace IceEngine
         Stack<Enemy> emyStack = new Stack<Enemy>();
         public Enemy ProduceEnemy()
         {
+            Enemy e = null;
             if (emyStack.Any())
             {
-                var e = emyStack.Pop();
+                e = emyStack.Pop();
                 e.gameObject.SetActive(true);
-                e.transform.position = enemyRoot.position;
-                return e;
             }
-
+            else
             {
                 var go = Instantiate(prefabEnemy, enemyRoot);
-                var e = go.GetComponent<Enemy>();
-                e.transform.position = enemyRoot.position;
+                e = go.GetComponent<Enemy>();
                 e.Parent = this;
-                return e;
             }
+            e.transform.position = enemyRoot.position;
+            e.IsOnMap = true;
+            return e;
         }
 
         public void Recycle(Enemy e)
         {
             e.gameObject.SetActive(false);
+            e.IsOnMap = false;
             emyStack.Push(e);
         }
 

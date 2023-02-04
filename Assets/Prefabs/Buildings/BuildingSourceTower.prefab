@@ -60,7 +60,11 @@ MonoBehaviour:
   onDiselected:
     m_PersistentCalls:
       m_Calls: []
-  maxHp: 0
+  maxHp: 200
+  aimOffset: {x: 0, y: 8, z: 0}
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
   onBuilt:
     m_PersistentCalls:
       m_Calls: []

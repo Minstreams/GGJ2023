@@ -11,6 +11,7 @@ namespace IceEngine
     {
         [Group("生命")]
         public float maxHp;
+        public Vector3 aimOffset;
 
         float _hp;
         public float HP
@@ -25,6 +26,7 @@ namespace IceEngine
                 else _hp = value;
             }
         }
+        public Vector3 AimPos => transform.position + aimOffset;
 
         public SimpleEvent onDie;
         public void Die()
@@ -33,5 +35,12 @@ namespace IceEngine
             OnDie();
         }
         protected abstract void OnDie();
+
+        protected override void OnDrawGizmos()
+        {
+            base.OnDrawGizmos();
+
+            Gizmos.DrawWireSphere(transform.position + aimOffset, 0.2f);
+        }
     }
 }

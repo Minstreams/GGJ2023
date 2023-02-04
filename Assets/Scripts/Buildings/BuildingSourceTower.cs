@@ -69,26 +69,29 @@ namespace IceEngine
         Stack<SCV> scvStack = new Stack<SCV>();
         public SCV ProduceSCV()
         {
+            SCV scv = null;
+
             if (scvStack.Any())
             {
-                var scv = scvStack.Pop();
+                scv = scvStack.Pop();
                 scv.gameObject.SetActive(true);
-                scv.transform.position = scvRoot.position;
-                return scv;
             }
-
+            else
             {
                 var go = Instantiate(Ice.Gameplay.Setting.prefabScv, scvRoot);
-                var scv = go.GetComponent<SCV>();
-                scv.transform.position = scvRoot.position;
+                scv = go.GetComponent<SCV>();
                 scv.Tower = this;
-                return scv;
             }
+
+            scv.transform.position = scvRoot.position;
+            scv.IsOnMap = true;
+            return scv;
         }
         public void RecycleSCV(SCV scv)
         {
             Ice.Gameplay.playerTargets.Remove(scv);
             scv.gameObject.SetActive(false);
+            scv.IsOnMap = false;
             scvStack.Push(scv);
         }
 

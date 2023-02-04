@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4036.8447, g: 3961.4277, b: 4484.5312, a: 1}
+  m_IndirectSpecularColor: {r: 4019.415, g: 3945.7383, b: 4469.992, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -269,6 +269,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56053c7bcf071374faa2fa8ca6b82008, type: 3}
+--- !u!1001 &192875419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7952358521080394884, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_Name
+      value: Nest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952358521080394885, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
 --- !u!1 &198697663
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +552,7 @@ MonoBehaviour:
   edgeSize: 14
   moveAmount: 0
   myCamera: {fileID: 198697665}
+  edgeScrolling: 1
 --- !u!1 &204713371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,6 +1992,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 172119509057690663, guid: 70e2bb64d664271429cd91349b127163, type: 3}
+      propertyPath: maxHp
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 2696419498743217958, guid: 70e2bb64d664271429cd91349b127163, type: 3}
       propertyPath: m_Name
       value: Basement

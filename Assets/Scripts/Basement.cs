@@ -11,12 +11,13 @@ namespace IceEngine
     {
         protected override void OnDie()
         {
-            throw new System.NotImplementedException();
+            // TODO: GameOver
+            //throw new System.NotImplementedException();
         }
 
         void Awake()
         {
-            Ice.Gameplay.playerTargets.Add(this);
+            //Ice.Gameplay.playerTargets.Add(this);
         }
     }
 }

@@ -10,11 +10,15 @@ namespace IceEngine
         [Group("Enemy")]
         public float speed;
         public float shootRange;
-        public float shootInterval;
-        public float shootPower;
 
-        public MapObject Target { get; private set; }
+        public Hurtable Target { get; private set; }
         public Nest Parent { get; set; }
+
+        Weapon weapon;
+        private void Awake()
+        {
+            weapon = GetComponentInChildren<Weapon>();
+        }
 
 
         List<Vector2Int> path = new List<Vector2Int>();
@@ -35,7 +39,7 @@ namespace IceEngine
                     yield break;
                 }
 
-                if (Target == null)
+                if (Target == null || !Target.IsOnMap)
                 {
                     // 随机一个建筑
                     Target = Ice.Gameplay.playerTargets[Random.Range(0, Ice.Gameplay.playerTargets.Count)];
@@ -49,6 +53,7 @@ namespace IceEngine
                 else
                 {
                     transform.position += speed * Time.deltaTime * Map.GetDirection(path[0].ToWorldPos() - transform.position);
+                    if (Vector3.Distance(Target.transform.position, transform.position) - Target.size.x * 0.5f < shootRange) weapon?.TryFire(Target);
 
                     if (Pos == path[0]) path.RemoveAt(0);
                 }
