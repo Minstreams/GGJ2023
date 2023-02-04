@@ -14,14 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scripts:
   - name: 
-    type: 1
+    type: 0
     assemblies: []
-    code: 'Label("Hahahaha");
-
-      if(Button("asdasd"))
-
-      {
-
-      Debug.Log("AAA");
-
-      }'
+    code: " foreach (var o in UnityEditor.Selection.objects)\r\n            {\r\n               
+      if (o is Material m)\r\n                {\r\n                    var tex =
+      m.GetTexture(\"_TextureSample\");\r\n                    if (tex != null)\r\n                   
+      {\r\n                        m.shader = Shader.Find(\"HDRP/Lit\");\r\n                       
+      m.SetTexture(\"_BaseColorMap\", tex);\r\n                    }\r\n               
+      }\r\n            }"
