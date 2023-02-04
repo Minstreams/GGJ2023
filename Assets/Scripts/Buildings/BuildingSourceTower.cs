@@ -87,6 +87,7 @@ namespace IceEngine
         }
         public void RecycleSCV(SCV scv)
         {
+            Ice.Gameplay.playerTargets.Remove(scv);
             scv.gameObject.SetActive(false);
             scvStack.Push(scv);
         }

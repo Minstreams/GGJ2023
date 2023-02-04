@@ -9,6 +9,14 @@ namespace IceEngine
     /// </summary>
     public class Basement : Hurtable
     {
+        protected override void OnDie()
+        {
+            throw new System.NotImplementedException();
+        }
 
+        void Awake()
+        {
+            Ice.Gameplay.playerTargets.Add(this);
+        }
     }
 }

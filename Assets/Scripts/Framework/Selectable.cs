@@ -36,5 +36,8 @@ namespace IceEngine
         {
             onDiselected?.Invoke();
         }
+
+        protected virtual void OnBecomeVisible() { }
+        protected virtual void OnBecomeInvisible() { }
     }
 }

@@ -7,24 +7,54 @@ namespace IceEngine
 {
     public class Enemy : Hurtable
     {
-        public MapObject target;
-        public float speed = 1;
+        [Group("Enemy")]
+        public float speed;
+        public float shootRange;
+        public float shootInterval;
+        public float shootPower;
+
+        public MapObject Target { get; private set; }
+        public Nest Parent { get; set; }
+
 
         List<Vector2Int> path = new List<Vector2Int>();
-
-        void Update()
+        public bool Go()
         {
-            if (path.Any() && Pos == path[0]) path.RemoveAt(0);
-            if (path.Any())
-            {
-                transform.position += Map.GetDirection(path[0].ToWorldPos() - transform.position) * Time.deltaTime * speed;
-            }
+            StartCoroutine(_Go());
 
-            if (target != null)
+            return true;
+        }
+
+        IEnumerator _Go()
+        {
+            while (true)
             {
-                Astar.FindingPath(Pos, target.Pos, path);
+                yield return 0;
+                if (!Ice.Gameplay.playerTargets.Any())
+                {
+                    yield break;
+                }
+
+                if (Target == null)
+                {
+                    // 随机一个建筑
+                    Target = Ice.Gameplay.playerTargets[Random.Range(0, Ice.Gameplay.playerTargets.Count)];
+                }
+
+                if (!path.Any() || !Map[path[0]].IsPath(mapType))
+                {
+                    // 路径走完或者撞到障碍，重新寻路
+                    Astar.FindingPath(Pos, Target.Pos, path, mapType, 32);
+                }
+                else
+                {
+                    transform.position += speed * Time.deltaTime * Map.GetDirection(path[0].ToWorldPos() - transform.position);
+
+                    if (Pos == path[0]) path.RemoveAt(0);
+                }
             }
         }
+
 
         protected override void OnDrawGizmos()
         {
@@ -38,6 +68,15 @@ namespace IceEngine
                     lastPos = p;
                 }
             }
+            using (new GizmosColorScope(Color.red))
+            {
+                Gizmos.DrawWireSphere(transform.position, shootRange);
+            }
+        }
+
+        protected override void OnDie()
+        {
+            Parent.Recycle(this);
         }
     }
 }

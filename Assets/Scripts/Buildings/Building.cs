@@ -15,7 +15,13 @@ namespace IceEngine
         {
             OnBuilt();
             onBuilt?.Invoke();
+            Ice.Gameplay.playerTargets.Add(this);
         }
         protected abstract void OnBuilt();
+
+        protected override void OnDie()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

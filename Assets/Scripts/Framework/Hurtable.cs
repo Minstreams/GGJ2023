@@ -12,6 +12,26 @@ namespace IceEngine
         [Group("生命")]
         public float maxHp;
 
-        public float HP { get; set; }
+        float _hp;
+        public float HP
+        {
+            get => _hp; set
+            {
+                if (value < 0)
+                {
+                    _hp = 0;
+                    Die();
+                }
+                else _hp = value;
+            }
+        }
+
+        public SimpleEvent onDie;
+        public void Die()
+        {
+            onDie?.Invoke();
+            OnDie();
+        }
+        protected abstract void OnDie();
     }
 }
