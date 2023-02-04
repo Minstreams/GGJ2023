@@ -8,11 +8,15 @@ namespace IceEngine
     public class PanelStatus : MonoBehaviour
     {
         public static PanelStatus Instance { get; private set; }
-        void Awake() => Instance = this;
+        void Awake()
+        {
+            Instance = this;
+            UpdateStatus();
+        }
 
         public Text tMoney;
 
-        public static void UpdateStatus() => Instance._UpdateStatus();
+        public static void UpdateStatus() => Instance?._UpdateStatus();
         public void _UpdateStatus()
         {
             tMoney.text = Ice.Gameplay.Money.ToString();

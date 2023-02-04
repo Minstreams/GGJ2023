@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2696419498743217959}
   - component: {fileID: 172119509057690663}
   - component: {fileID: 2299276450108364676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Basement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,18 +49,27 @@ MonoBehaviour:
   mapType: 1
   size: {x: 16, y: 16}
   center: {x: 8, y: 8}
+  viewRange: 20
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: "\u57FA\u5730"
   displayDescription: "\u55EF\u55EF"
   options:
   - {fileID: 11400000, guid: 1f50ee1d7edbb1f44a7934460b0359d6, type: 2}
+  - {fileID: 11400000, guid: f1c9a52274a2cdd40948f6cc2118eb85, type: 2}
   onSelected:
     m_PersistentCalls:
       m_Calls: []
   onDiselected:
     m_PersistentCalls:
       m_Calls: []
-  maxHp: 1000
+  maxHp: 10000
+  aimOffset: {x: 0, y: 0, z: 0}
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2299276450108364676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85,7 +94,7 @@ GameObject:
   - component: {fileID: 3905605661167892080}
   - component: {fileID: 7246206285655266781}
   - component: {fileID: 2615690917905102535}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 2bfa38cb34a84714eb1999bb07a20b91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

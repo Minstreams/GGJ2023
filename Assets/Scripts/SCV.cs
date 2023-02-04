@@ -8,7 +8,7 @@ namespace IceEngine
     /// <summary>
     /// 资源采集机器人
     /// </summary>
-    public class SCV : Selectable
+    public class SCV : Hurtable
     {
         public Source Target { get; private set; }
         public float Speed { get; private set; }
@@ -26,6 +26,7 @@ namespace IceEngine
 
                 target.CurSCV = this;
 
+                Ice.Gameplay.playerTargets.Add(this);
                 StartCoroutine(_Go());
 
                 return true;
@@ -78,6 +79,11 @@ namespace IceEngine
 
                 transform.position += Map.GetDirection(path[pathId].ToWorldPos() - transform.position) * Time.deltaTime * Speed;
             }
+        }
+
+        protected override void OnDie()
+        {
+            Tower.RecycleSCV(this);
         }
     }
 }

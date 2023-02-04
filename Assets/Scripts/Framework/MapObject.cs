@@ -15,6 +15,8 @@ namespace IceEngine
         public Vector2Int size = Vector2Int.one;
         public Vector2Int center = Vector2Int.zero;
 
+        public int viewRange = 0;
+
         public Vector2Int Pos => transform.position.ToGridPos();
 
         protected GMap Map => Ice.Gameplay.map;
@@ -33,28 +35,51 @@ namespace IceEngine
                 }
             }
         }
+        public void ForEachViewUnit(System.Action<GMapUnit> action, Vector2Int? posOverride = null)
+        {
+            if (viewRange == 0) return;
+            var p = posOverride ?? Pos;
+            for (int y = -viewRange; y <= viewRange; ++y)
+            {
+                for (int x = -viewRange; x <= viewRange; ++x)
+                {
+                    if ((new Vector2Int(x, y)).sqrMagnitude <= viewRange * viewRange)
+                    {
+                        action(Map[p.x + x, p.y + y]);
+                    }
+                }
+            }
+        }
         protected virtual void LateUpdate()
         {
+
+
             if (!IsOnMap) return;
+            var p = Pos;
             if (lastPos == null)
             {
-                lastPos = Pos;
+                lastPos = p;
                 ForEachUnit(u => { if (u.obj == null) u.obj = this; });
+                ForEachViewUnit(u => u.Visibility++);
             }
-            else if (lastPos.Value != Pos)
+            else if (lastPos.Value != p)
             {
                 ForEachUnit(u => { if (u.obj == this) u.obj = null; }, lastPos);
+                ForEachViewUnit(u => u.Visibility--, lastPos);
                 ForEachUnit(u => { if (u.obj == null) u.obj = this; });
-                lastPos = Pos;
+                ForEachViewUnit(u => u.Visibility++);
+                lastPos = p;
             }
         }
         protected virtual void OnDestroy()
         {
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
+            ForEachViewUnit(u => u.Visibility--);
         }
         protected virtual void OnDisable()
         {
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
+            ForEachViewUnit(u => u.Visibility--);
         }
 
         public Color mapGizmoColor = new Color(0, 1, 0, 0.3f);
@@ -62,6 +87,13 @@ namespace IceEngine
         {
             using var _ = new GizmosColorScope(mapGizmoColor);
             Gizmos.DrawCube(transform.position + size.ToWorldPos() * 0.5f - new Vector3(0.5f, 0, 0.5f) - center.ToWorldPos(), new Vector3(size.x, 1, size.y));
+            if (viewRange > 0)
+            {
+                using (new GizmosColorScope(new Color(1, 0, 0.7f)))
+                {
+                    Gizmos.DrawWireSphere(transform.position, viewRange);
+                }
+            }
         }
     }
 }

@@ -13,9 +13,17 @@ namespace IceEngine
 
         public void Build()
         {
+            RestoreHP();
             OnBuilt();
             onBuilt?.Invoke();
+            Ice.Gameplay.playerTargets.Add(this);
         }
         protected abstract void OnBuilt();
+
+        protected override void OnDie()
+        {
+            Ice.Gameplay.playerTargets.Remove(this);
+            Destroy(gameObject);
+        }
     }
 }

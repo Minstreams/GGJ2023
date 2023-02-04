@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using IceEngine;
 using UnityEngine;
 
@@ -31,6 +32,8 @@ namespace Ice
                 PanelStatus.UpdateStatus();
             }
         }
+
+        public static List<Hurtable> playerTargets = new List<Hurtable>();
         #endregion
 
         public static GMap map;
