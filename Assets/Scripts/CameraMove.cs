@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IceEngine
 {
-    public class Camera : MonoBehaviour
+    public class CameraMove : MonoBehaviour
     {
         public float edgeSize;  //会产生移动效果的边缘宽度
         public float moveAmount;    //移动速度
