@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cccfef90a274a41b593721cfb02203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapType: 0
+  mapType: 1
   size: {x: 4, y: 4}
   center: {x: 2, y: 2}
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}

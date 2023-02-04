@@ -60,26 +60,32 @@ namespace IceEngine
                         case GMapType.Collider:
                             using (new GizmosColorScope(new Color(1, 0, 0, 0.5f)))
                             {
-                                Gizmos.DrawCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
                             }
                             break;
                         case GMapType.Robot:
                             using (new GizmosColorScope(new Color(1, 0.75f, 0, 0.5f)))
                             {
-                                Gizmos.DrawCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
                             }
                             break;
                         case GMapType.Building:
                             using (new GizmosColorScope(new Color(0, 0.75f, 1, 0.5f)))
                             {
-                                Gizmos.DrawCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
+                            }
+                            break;
+                        case GMapType.Source:
+                            using (new GizmosColorScope(new Color(0, 1, 1, 0.5f)))
+                            {
+                                Gizmos.DrawCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
                             }
                             break;
                         case GMapType.Path:
                         default:
                             using (new GizmosColorScope(Color.gray))
                             {
-                                Gizmos.DrawWireCube(new Vector3(x + 0.5f, y + 0.5f), Vector3.one);
+                                Gizmos.DrawWireCube(new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
                             }
                             break;
                     }

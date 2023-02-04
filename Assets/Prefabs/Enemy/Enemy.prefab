@@ -129,13 +129,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1c6a560195a0148a7b5b665bfd1a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapType: 0
+  mapType: 4
   size: {x: 1, y: 1}
   center: {x: 0, y: 0}
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: 
   displayDescription: 
   options: []
+  onSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  onDiselected:
+    m_PersistentCalls:
+      m_Calls: []
   maxHp: 0
   target: {fileID: 0}
   speed: 1

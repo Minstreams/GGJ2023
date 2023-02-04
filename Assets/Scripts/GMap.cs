@@ -74,7 +74,18 @@ namespace IceEngine
                 _ => Type == GMapType.Path
             };
         }
-        public GMapType Type => obj != null ? obj.mapType : GMapType.Path;
+        public GMapType Type
+        {
+            get
+            {
+                if (obj != null)
+                {
+                    return obj.mapType;
+                }
+                return GMapType.Path;
+            }
+        }
+        //=> obj != null ? obj.mapType : GMapType.Path;
 
         public Vector2Int pos;
         public MapObject obj;
