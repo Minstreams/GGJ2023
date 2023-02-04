@@ -13,7 +13,7 @@ namespace IceEngine
 
         public void Build()
         {
-            HP = maxHp;
+            RestoreHP();
             OnBuilt();
             onBuilt?.Invoke();
             Ice.Gameplay.playerTargets.Add(this);
@@ -22,6 +22,7 @@ namespace IceEngine
 
         protected override void OnDie()
         {
+            Ice.Gameplay.playerTargets.Remove(this);
             Destroy(gameObject);
         }
     }

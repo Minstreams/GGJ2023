@@ -85,6 +85,7 @@ namespace IceEngine
 
             scv.transform.position = scvRoot.position;
             scv.IsOnMap = true;
+            scv.RestoreHP();
             return scv;
         }
         public void RecycleSCV(SCV scv)

@@ -16,7 +16,7 @@ namespace IceEngine
         float _hp;
         public float HP
         {
-            get => _hp; set
+            get => _hp; private set
             {
                 if (value < 0)
                 {
@@ -26,15 +26,27 @@ namespace IceEngine
                 else _hp = value;
             }
         }
+        public void RestoreHP()
+        {
+            HP = maxHp;
+        }
+        public void Hurt(float delta, Hurtable attacker)
+        {
+            onHurted?.Invoke(delta);
+            OnHurted(delta, attacker);
+            HP -= delta;
+        }
         public Vector3 AimPos => transform.position + aimOffset;
 
         public SimpleEvent onDie;
+        public FloatEvent onHurted;
         public void Die()
         {
             onDie?.Invoke();
             OnDie();
         }
         protected abstract void OnDie();
+        protected virtual void OnHurted(float delta, Hurtable attacker) { }
 
         protected override void OnDrawGizmos()
         {

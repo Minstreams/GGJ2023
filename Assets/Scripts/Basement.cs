@@ -17,7 +17,7 @@ namespace IceEngine
 
         void Awake()
         {
-            //Ice.Gameplay.playerTargets.Add(this);
+            Ice.Gameplay.playerTargets.Add(this);
         }
     }
 }

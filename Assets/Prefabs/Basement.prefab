@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2696419498743217959}
   - component: {fileID: 172119509057690663}
   - component: {fileID: 2299276450108364676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Basement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,6 +61,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxHp: 1000
+  aimOffset: {x: 0, y: 0, z: 0}
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2299276450108364676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85,7 +89,7 @@ GameObject:
   - component: {fileID: 3905605661167892080}
   - component: {fileID: 7246206285655266781}
   - component: {fileID: 2615690917905102535}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

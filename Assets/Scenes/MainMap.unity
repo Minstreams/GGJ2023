@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4019.415, g: 3945.7383, b: 4469.992, a: 1}
+  m_IndirectSpecularColor: {r: 4035.3984, g: 3959.789, b: 4482.5625, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1996,6 +1996,14 @@ PrefabInstance:
       propertyPath: maxHp
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 172119509057690663, guid: 70e2bb64d664271429cd91349b127163, type: 3}
+      propertyPath: options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 172119509057690663, guid: 70e2bb64d664271429cd91349b127163, type: 3}
+      propertyPath: options.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f1c9a52274a2cdd40948f6cc2118eb85, type: 2}
     - target: {fileID: 2696419498743217958, guid: 70e2bb64d664271429cd91349b127163, type: 3}
       propertyPath: m_Name
       value: Basement

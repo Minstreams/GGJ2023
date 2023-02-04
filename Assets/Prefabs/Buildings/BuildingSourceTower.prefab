@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 578626656221675208}
   - component: {fileID: 578626656221675223}
   - component: {fileID: 7489719328169308157}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BuildingSourceTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2862238601310225231}
   - component: {fileID: 3422720846812422952}
   - component: {fileID: 3276432517602221912}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9037683845546321053}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SCVRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -83,5 +83,11 @@ namespace IceEngine
         {
             Parent.Recycle(this);
         }
+
+        protected override void OnHurted(float delta, Hurtable attacker)
+        {
+            path.Clear();
+            Target = attacker;
+        }
     }
 }

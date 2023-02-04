@@ -18,6 +18,7 @@ namespace IceEngine
 
         void Start()
         {
+            RestoreHP();
             StartCoroutine(_Main());
         }
 
@@ -57,6 +58,7 @@ namespace IceEngine
             }
             e.transform.position = enemyRoot.position;
             e.IsOnMap = true;
+            e.RestoreHP();
             return e;
         }
 
@@ -69,7 +71,7 @@ namespace IceEngine
 
         protected override void OnDie()
         {
-            throw new System.NotImplementedException();
+            Destroy(gameObject);
         }
     }
 }

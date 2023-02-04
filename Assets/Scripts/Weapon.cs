@@ -14,7 +14,12 @@ namespace IceEngine
         public Transform transRoot;
         public SimpleEvent onFire;
 
+        Hurtable parent;
         float timer = 0;
+        void Awake()
+        {
+            parent = GetComponentInParent<Hurtable>();
+        }
         private void Update()
         {
             if (timer > 0) timer -= Time.deltaTime;
@@ -36,7 +41,7 @@ namespace IceEngine
                 point = hit.point;
             }
 
-            if (hurtedTarget != null) hurtedTarget.HP -= power;
+            if (hurtedTarget != null) hurtedTarget.Hurt(power, parent);
 
             // 视觉表现
             {
