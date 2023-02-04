@@ -82,7 +82,7 @@ namespace Ice
                     bool canPut = true;
                     mapComp.ForEachUnit(u =>
                     {
-                        if (!u.IsPath()) canPut = false;
+                        if (!u.IsPath() || u.Visibility == 0) canPut = false;
                     });
 
                     if (canPut)

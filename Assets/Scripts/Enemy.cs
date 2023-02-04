@@ -55,7 +55,7 @@ namespace IceEngine
                     transform.position += speed * Time.deltaTime * Map.GetDirection(path[0].ToWorldPos() - transform.position);
                     if (Vector3.Distance(Target.transform.position, transform.position) - Target.size.x * 0.5f < shootRange) weapon?.TryFire(Target);
 
-                    if (Pos == path[0]) path.RemoveAt(0);
+                    if (Map[Pos].pos == path[0]) path.RemoveAt(0);
                 }
             }
         }

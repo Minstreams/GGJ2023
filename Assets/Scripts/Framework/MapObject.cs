@@ -23,6 +23,35 @@ namespace IceEngine
         Vector2Int? lastPos = null;
 
         public bool IsOnMap { get; set; } = true;
+        public bool IsVisible { get; private set; } = false;
+
+        public void TrySetVisible(bool visible)
+        {
+            if (visible == IsVisible) return;
+
+            if (visible)
+            {
+                IsVisible = true;
+                OnSight();
+            }
+            else
+            {
+                bool canSee = false;
+                ForEachUnit(u =>
+                {
+                    if (u.Visibility > 0) canSee = true;
+                });
+
+                if (!canSee)
+                {
+                    IsVisible = false;
+                    OutSight();
+                }
+            }
+        }
+
+        protected virtual void OnSight() { }
+        protected virtual void OutSight() { }
 
         public void ForEachUnit(System.Action<GMapUnit> action, Vector2Int? posOverride = null)
         {
@@ -52,34 +81,58 @@ namespace IceEngine
         }
         protected virtual void LateUpdate()
         {
-
-
             if (!IsOnMap) return;
             var p = Pos;
+            var pNormalized = Map[Pos].pos;
             if (lastPos == null)
             {
-                lastPos = p;
+                lastPos = pNormalized;
                 ForEachUnit(u => { if (u.obj == null) u.obj = this; });
                 ForEachViewUnit(u => u.Visibility++);
+                ForEachUnit(u =>
+                {
+                    if (u.Visibility > 0) TrySetVisible(true);
+                });
+                Ice.Gameplay.map.maskTex.Apply();
             }
-            else if (lastPos.Value != p)
+            else if (lastPos.Value != pNormalized)
             {
                 ForEachUnit(u => { if (u.obj == this) u.obj = null; }, lastPos);
                 ForEachViewUnit(u => u.Visibility--, lastPos);
                 ForEachUnit(u => { if (u.obj == null) u.obj = this; });
                 ForEachViewUnit(u => u.Visibility++);
-                lastPos = p;
+                lastPos = pNormalized;
+                Ice.Gameplay.map.maskTex.Apply();
+            }
+
+            if (CameraMgr.Instance != null)
+            {
+                var cp = CameraMgr.Instance.transform.position.ToGridPos();
+                int w = Map.Width;
+                int wHalf = w >> 1;
+                int h = Map.Height;
+                int hHalf = h >> 1;
+
+                var pos = transform.position;
+                if (cp.x - p.x > wHalf) pos.x += w;
+                if (cp.x - p.x < -wHalf) pos.x -= w;
+                if (cp.y - p.y > hHalf) pos.z += h;
+                if (cp.y - p.y < -hHalf) pos.z -= h;
+
+                transform.position = pos;
             }
         }
         protected virtual void OnDestroy()
         {
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
             ForEachViewUnit(u => u.Visibility--);
+            Ice.Gameplay.map.maskTex.Apply();
         }
         protected virtual void OnDisable()
         {
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
             ForEachViewUnit(u => u.Visibility--);
+            Ice.Gameplay.map.maskTex.Apply();
         }
 
         public Color mapGizmoColor = new Color(0, 1, 0, 0.3f);

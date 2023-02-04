@@ -19,7 +19,16 @@ namespace IceEngine
         void Start()
         {
             RestoreHP();
+        }
+
+        protected override void OnSight()
+        {
             StartCoroutine(_Main());
+        }
+
+        protected override void OutSight()
+        {
+            StopAllCoroutines();
         }
 
         IEnumerator _Main()

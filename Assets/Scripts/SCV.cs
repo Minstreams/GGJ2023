@@ -50,7 +50,7 @@ namespace IceEngine
             while (true)
             {
                 yield return 0;
-                if (Pos == path[pathId]) ++pathId;
+                if (Map[Pos].pos == path[pathId]) ++pathId;
 
                 if (pathId >= path.Count)
                 {
@@ -67,7 +67,7 @@ namespace IceEngine
             while (true)
             {
                 yield return 0;
-                if (Pos == path[pathId]) --pathId;
+                if (Map[Pos].pos == path[pathId]) --pathId;
 
                 if (pathId < 0)
                 {

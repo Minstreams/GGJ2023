@@ -104,15 +104,26 @@ namespace IceEngine
         public float height;
 
         int _visibility;
+        /// <summary>
+        /// 可见度，大于0时可见，等于0不可见
+        /// </summary>
         public int Visibility
         {
             get => _visibility; set
             {
                 if (value != _visibility)
                 {
+                    if (value > 0 != _visibility > 0)
+                    {
+                        Ice.Gameplay.map.maskTex.SetPixel(pos.x, pos.y, value > 0 ? Color.white : Color.black);
+                        //Ice.Gameplay.map.maskTex.Apply();
+
+                        if (obj != null)
+                        {
+                            obj.TrySetVisible(value > 0);
+                        }
+                    }
                     _visibility = value;
-                    Ice.Gameplay.map.maskTex.SetPixel(pos.x, pos.y, value > 0 ? Color.white : Color.black);
-                    Ice.Gameplay.map.maskTex.Apply();
                 }
             }
         }
