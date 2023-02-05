@@ -48,7 +48,7 @@ namespace IceEngine
                 if (!path.Any() || !Map[path[0]].IsPath(mapType))
                 {
                     // 路径走完或者撞到障碍，重新寻路
-                    Astar.FindingPath(Pos, Target.Pos, path, mapType, 32);
+                    Astar.FindingPath(Pos, Target.Pos, path, mapType, 8);
                 }
                 else
                 {
