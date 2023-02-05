@@ -18,7 +18,7 @@ namespace IceEngine
         List<Vector2Int> path = new List<Vector2Int>();
         public bool Go(Source target, float speed)
         {
-            if (Astar.FindingPath(Pos, target.Pos, path, mapType, 32))
+            if (Astar.FindingPath(Pos, target.Pos, path, mapType, 8))
             {
                 Target = target;
                 Speed = speed;

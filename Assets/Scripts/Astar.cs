@@ -13,14 +13,14 @@ namespace IceEngine
         static Dictionary<GMapUnit, GMapUnit> parentDic = new Dictionary<GMapUnit, GMapUnit>();
 
         static GMap Map => Ice.Gameplay.map;
-        public static bool FindingPath(Vector2Int startPos, Vector2Int endPos, List<Vector2Int> path, GMapType type = GMapType.Path, int loopTimeOverride = 16) => FindingPath(Map[startPos], Map[endPos], path, type, loopTimeOverride);
+        public static bool FindingPath(Vector2Int startPos, Vector2Int endPos, List<Vector2Int> path, GMapType type = GMapType.Path, int loopTimeOverride = 4) => FindingPath(Map[startPos], Map[endPos], path, type, loopTimeOverride);
 
         /// <summary>
         /// A*算法，寻找最短路径
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
-        public static bool FindingPath(GMapUnit startNode, GMapUnit endNode, List<Vector2Int> path, GMapType type = GMapType.Path, int loopTimeOverride = 16)
+        public static bool FindingPath(GMapUnit startNode, GMapUnit endNode, List<Vector2Int> path, GMapType type = GMapType.Path, int loopTimeOverride = 4)
         {
             int CalDis(Vector2Int a, Vector2Int b)
             {
