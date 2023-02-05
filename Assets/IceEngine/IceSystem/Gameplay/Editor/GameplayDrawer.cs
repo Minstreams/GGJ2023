@@ -20,7 +20,7 @@ namespace IceEditor.Internal
 
     public static class GameplayTools
     {
-        [MenuItem("一键落地 #D")]
+        [MenuItem("Tools/一键落地 #D")]
         public static void PutOnGround()
         {
             foreach (var o in Selection.objects)
@@ -34,7 +34,7 @@ namespace IceEditor.Internal
                 }
             }
         }
-        [MenuItem("一键落地 _#D")]
+        [MenuItem("Tools/一键落地 _#D")]
         public static void PutOnGroundAndRotate()
         {
             foreach (var o in Selection.objects)
