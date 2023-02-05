@@ -500,7 +500,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77beb9bed30c17b4ba1b1054755bd643, type: 2}
+  - {fileID: 2100000, guid: 14136ded9727d5b4abdd0e71ae8c121f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc257b46f1462314db1c6d72eb5b1a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyword: _BaseColor
+  keyword: _EmissiveColor
   time: 0.5
   curve:
     serializedVersion: 2
