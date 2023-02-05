@@ -63,5 +63,11 @@ namespace IceEngine
             lr.SetPositions(new Vector3[] { p0.position, t.p0.position });
             onConnect?.Invoke();
         }
+
+        protected override void OnHurted(float delta, Hurtable attacker)
+        {
+            if (Houmen.godMode) return;
+            base.OnHurted(delta, attacker);
+        }
     }
 }

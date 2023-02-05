@@ -27,5 +27,11 @@ namespace IceEngine
             FXEmitter.PlayAt(FXType.DestroyBuilding, AimPos);
             Destroy(gameObject);
         }
+
+        protected override void OnHurted(float delta, Hurtable attacker)
+        {
+            if (Houmen.godMode) return;
+            base.OnHurted(delta, attacker);
+        }
     }
 }
