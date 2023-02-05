@@ -12,7 +12,7 @@ namespace IceEngine
         public int price;
         public float cd;
 
-        public string requiredKeyword;
+        public string requiredKey;
 
         public virtual void OnClick(Selectable obj)
         {

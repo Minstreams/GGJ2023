@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using IceEngine;
+
 namespace Ice
 {
     public sealed class Gameflow : IceEngine.Framework.IceSystem<IceEngine.Internal.SettingGameflow>
@@ -30,15 +32,18 @@ namespace Ice
         static IEnumerator _MainMap()
         {
             // Enter
-            Level.LoadLevel("MainMap");
+            PanelSelectedObject.Instance.gameObject.SetActive(true);
+            PanelStatus.Instance.gameObject.SetActive(true);
 
             while (true)
             {
                 yield return null;
                 // Execute
+                if (GetMsg("GameOver")) break;
             }
 
             // Exit
+
         }
 
         #region 消息机制

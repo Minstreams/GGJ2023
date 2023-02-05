@@ -12,6 +12,7 @@ namespace IceEngine
         {
             Instance = this;
             UpdateStatus();
+            gameObject.SetActive(false);
         }
 
         public Text tMoney;

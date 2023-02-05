@@ -9,8 +9,12 @@ namespace IceEngine
     public class PanelSelectedObject : MonoBehaviour
     {
         #region Static
-        static PanelSelectedObject Instance { get; set; }
-        void Awake() => Instance = this;
+        public static PanelSelectedObject Instance { get; private set; }
+        void Awake()
+        {
+            Instance = this;
+            gameObject.SetActive(false);
+        }
         public static void UpdateContent() => Instance._UpdateContent();
         #endregion
 
@@ -39,10 +43,13 @@ namespace IceEngine
             for (int i = 0; i < obj.options.Count; i++)
             {
                 OptionItem item = obj.options[i];
-                var option = Instantiate(prefabOptionItem, optionPanel);
-                var comp = option.GetComponent<ButtonOptionItem>();
-                comp.Init(item, i);
-                optionObjs.Add(option);
+                if (item.requiredKey.IsNullOrEmpty() || Ice.Gameplay.HasKey(item.requiredKey))
+                {
+                    var option = Instantiate(prefabOptionItem, optionPanel);
+                    var comp = option.GetComponent<ButtonOptionItem>();
+                    comp.Init(item, i);
+                    optionObjs.Add(option);
+                }
             }
         }
 

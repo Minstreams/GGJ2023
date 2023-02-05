@@ -109,5 +109,12 @@ namespace Ice
             }
         }
         #endregion
+
+        #region 流程解锁逻辑
+        public static HashSet<string> unlockedKeys = new HashSet<string>();
+        public static bool HasKey(string key) => unlockedKeys.Contains(key);
+        public static bool UnlockKey(string key) => unlockedKeys.Add(key);
+        public static bool LockKey(string key) => unlockedKeys.Remove(key);
+        #endregion
     }
 }

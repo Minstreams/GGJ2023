@@ -18,8 +18,8 @@ namespace IceEngine
             var f = particles[fx];
             if (f == null) return;
             f.transform.position = pos;
-            if (rot.HasValue) f.transform.rotation = rot.Value;
-            if (size.HasValue) f.transform.localScale = Vector3.one * size.Value;
+            f.transform.rotation = rot ?? Quaternion.identity;
+            f.transform.localScale = Vector3.one * (size ?? 1);
             f.Input();
         }
     }

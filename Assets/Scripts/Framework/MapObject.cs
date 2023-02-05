@@ -32,6 +32,7 @@ namespace IceEngine
             if (visible)
             {
                 IsVisible = true;
+                onSight?.Invoke();
                 OnSight();
             }
             else
@@ -50,6 +51,7 @@ namespace IceEngine
             }
         }
 
+        public SimpleEvent onSight;
         protected virtual void OnSight() { }
         protected virtual void OutSight() { }
 

@@ -9,15 +9,24 @@ namespace IceEngine
     /// </summary>
     public class Basement : Hurtable
     {
-        protected override void OnDie()
+        public string key;
+        private void Awake()
         {
-            // TODO: GameOver
-            //throw new System.NotImplementedException();
+            IsOnMap = false;
         }
 
-        void Awake()
+        protected override void OnDie()
+        {
+            Ice.Gameplay.LockKey(key);
+            FXEmitter.PlayAt(FXType.DestroyBuilding, transform.position, size: 8);
+            Ice.Gameflow.SendMsg("GameOver");
+        }
+
+        protected override void OnSight()
         {
             Ice.Gameplay.playerTargets.Add(this);
+            base.OnSight();
+            Ice.Gameplay.UnlockKey(key);
         }
     }
 }

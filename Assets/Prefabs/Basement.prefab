@@ -49,7 +49,10 @@ MonoBehaviour:
   mapType: 1
   size: {x: 16, y: 16}
   center: {x: 8, y: 8}
-  viewRange: 40
+  viewRange: 50
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: "\u57FA\u5730"
   displayDescription: "\u55EF\u55EF"
@@ -71,6 +74,7 @@ MonoBehaviour:
   onHurted:
     m_PersistentCalls:
       m_Calls: []
+  key: 
 --- !u!65 &2299276450108364676
 BoxCollider:
   m_ObjectHideFlags: 0
