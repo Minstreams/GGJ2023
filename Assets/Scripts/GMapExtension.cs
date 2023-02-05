@@ -11,7 +11,7 @@ namespace IceEngine
     public static class GMapExtension
     {
         static GMap Map => Ice.Gameplay.map;
-        public static Vector3 ToWorldPos(this Vector2Int gridPos)
+        public static Vector3 ToWorldPos(this Vector2Int gridPos, bool ignoreY = false)
         {
             float x = gridPos.x;
             float y = gridPos.y;
@@ -30,7 +30,7 @@ namespace IceEngine
                 while (y - cp.z < -hHalf) y += h;
             }
 
-            return new Vector3(x, Map != null ? Map[gridPos].height : 0, y);
+            return new Vector3(x, ignoreY ? 0 : Map != null ? Map[gridPos].height : 0, y);
         }
         public static Vector2Int ToGridPos(this Vector3 worldPos) => new Vector2Int(Mathf.RoundToInt(worldPos.x), Mathf.RoundToInt(worldPos.z));
     }

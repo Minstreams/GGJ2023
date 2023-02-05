@@ -70,7 +70,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   speed: 5
-  shootRange: 5
+  shootRange: 10
 --- !u!65 &7650112453191804841
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -142,7 +142,7 @@ namespace IceEngine
         protected virtual void OnDrawGizmos()
         {
             using var _ = new GizmosColorScope(mapGizmoColor);
-            Gizmos.DrawCube(transform.position + size.ToWorldPos() * 0.5f - new Vector3(0.5f, 0, 0.5f) - center.ToWorldPos(), new Vector3(size.x, 1, size.y));
+            Gizmos.DrawCube(transform.position + size.ToWorldPos(true) * 0.5f - new Vector3(0.5f, 0, 0.5f) - center.ToWorldPos(true), new Vector3(size.x, 1, size.y));
             if (viewRange > 0)
             {
                 using (new GizmosColorScope(new Color(1, 0, 0.7f)))
