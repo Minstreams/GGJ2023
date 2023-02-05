@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35f54ca888bb1142b0b3729ae19401e, type: 3}
   m_Name: SellBuilding
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  tip: 
+  icon: {fileID: 21300000, guid: 433a462daed81d7499b62da0d4dca725, type: 3}
+  tip: "\u51FA\u552E"
   price: 0
   cd: 0
+  requiredKey: 

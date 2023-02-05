@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b90c4e29d1c93f48a3c703c1badd30b, type: 3}
   m_Name: PutBuilding_Weapon
   m_EditorClassIdentifier: 
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: d40e9aabc9b1ff149b0b4daf7b4c2513, type: 3}
   tip: "\u9632\u5FA1\u5854"
   price: 100
   cd: 12
+  requiredKey: 
   prefabBuilding: {fileID: 8849846825322433588, guid: b0583f1a6c5bd9d489d6300d714ee7da, type: 3}

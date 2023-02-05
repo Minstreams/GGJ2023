@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b90c4e29d1c93f48a3c703c1badd30b, type: 3}
   m_Name: PutBuilding_Sight
   m_EditorClassIdentifier: 
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 9e9f011176bd62d4692b2c53460a42a5, type: 3}
   tip: "\u89C2\u5BDF\u5854"
   price: 100
   cd: 12
-  requiredKeyword: 
+  requiredKey: 
   prefabBuilding: {fileID: 5080815090988953534, guid: 0f1cebe3dac72fd48a8ddbde4821dc92, type: 3}
