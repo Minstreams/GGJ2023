@@ -95,6 +95,7 @@ namespace Ice
                     else
                     {
                         // TODO:视觉表现
+                        mapComp.onHurted?.Invoke(0);
                     }
                 }
                 if (Input.GetMouseButtonDown(1))

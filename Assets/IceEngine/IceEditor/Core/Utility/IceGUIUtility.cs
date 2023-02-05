@@ -60,10 +60,17 @@ namespace IceEditor
                     var drawers = TypeCache.GetTypesWithAttribute<CustomPropertyDrawer>();
                     foreach (var d in drawers)
                     {
-                        var attr = d.GetCustomAttribute<CustomPropertyDrawer>();
-                        var t = getTypeOfPropertyDrawer(attr);
+                        try
+                        {
+                            var attr = d.GetCustomAttribute<CustomPropertyDrawer>();
+                            var t = getTypeOfPropertyDrawer(attr);
 
-                        if (!t.IsSystemType()) _typesWithCustomDrawer.Add(t);
+                            if (!t.IsSystemType()) _typesWithCustomDrawer.Add(t);
+                        }
+                        catch (Exception ex)
+                        {
+                            //Debug.LogError(ex.Message + d.ToString());
+                        }
                     }
                 }
                 return _typesWithCustomDrawer;
