@@ -1,5 +1,106 @@
 {
     "m_Dictionary": {
-        "m_DictionaryValues": []
+        "m_DictionaryValues": [
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Editor.FloatingWindow",
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Scattering.UsePivotForPlacement",
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Scattering.ParentObjectsWithSurface",
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Scattering.AvoidOverlappingObjects",
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Mesh.UseAdditionalVertexStream",
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Brush.HideWireframe",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "SmoothBrush.IgnoreOpenEdges",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Mesh.RebuildColliders",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "RaiseLowerBrush.IgnoreOpenEdges",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "RaiseLowerBrush.StickToFirstAppliedDirection",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "UnityEngine.Polybrush.BrushMirror, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "Brush.MirrorAxis",
+                "value": "{\"m_Value\":0}"
+            },
+            {
+                "type": "UnityEngine.Polybrush.MirrorCoordinateSpace, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "Brush.MirrorSpace",
+                "value": "{\"m_Value\":0}"
+            },
+            {
+                "type": "UnityEditor.Polybrush.PrefabLoadout, Unity.Polybrush.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "ScatteringEditor.userLoadout",
+                "value": "{\"m_Value\":{\"infos\":[{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":7305066057902048564,\"guid\":\"5277392fe5ecf5e49a03e8bd0041117e\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":7593350174222480758,\"guid\":\"093742e29596f874e9be067d89f14a68\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":6060632249778642066,\"guid\":\"66996c6d94a640a448cdbaa14791b960\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":9028009542760164713,\"guid\":\"0b3cbb401d54f234a94c198ebf7c8450\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":1318709540744739683,\"guid\":\"6ca3a558ea5b63d439fe4f517c314a07\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":2026016878694626597,\"guid\":\"0b822e40b46daaa40869b73247348e09\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":6383811874425920676,\"guid\":\"11a30ab4b0be9534581513e677c85c1a\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":1734276294566088514,\"guid\":\"ab416f8c60e923f4aab968e812a61f6e\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":8460565683733240807,\"guid\":\"1d6d68b80b6c874438ccf29a661e0730\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":1156203967509387012,\"guid\":\"776821c71979c0d47ae7f4b63e78dd55\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":3063706723230366807,\"guid\":\"fd203a4c5acbc7143b0c4e0f48d96937\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"871ef4196a0f63f428355b6be068e89b\",\"type\":2},\"prefab\":{\"fileID\":6129807510515480764,\"guid\":\"7cb57f3139e35cd41b8c93143b997965\",\"type\":3}}]}}"
+            },
+            {
+                "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "ScatteringEditor.PreviewThumSize",
+                "value": "{\"m_Value\":94}"
+            },
+            {
+                "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "GI.WorkflowMode",
+                "value": "{\"m_Value\":1}"
+            },
+            {
+                "type": "UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "Brush.BrushColor",
+                "value": "{\"m_Value\":{\"r\":0.0,\"g\":0.800000011920929,\"b\":1.0,\"a\":1.0}}"
+            },
+            {
+                "type": "UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "Brush.BrushColorGradient",
+                "value": "{\"m_Value\":{\"serializedVersion\":\"2\",\"key0\":{\"r\":0.22699999809265138,\"g\":1.0,\"b\":0.22699999809265138,\"a\":1.0},\"key1\":{\"r\":1.0,\"g\":1.0,\"b\":1.0,\"a\":0.2587999999523163},\"key2\":{\"r\":0.0,\"g\":0.0,\"b\":0.0,\"a\":0.0},\"key3\":{\"r\":0.0,\"g\":0.0,\"b\":0.0,\"a\":0.0},\"key4\":{\"r\":0.0,\"g\":0.0,\"b\":0.0,\"a\":0.0},\"key5\":{\"r\":0.0,\"g\":0.0,\"b\":0.0,\"a\":0.0},\"key6\":{\"r\":0.0,\"g\":0.0,\"b\":0.0,\"a\":0.0},\"key7\":{\"r\":0.0,\"g\":0.0,\"b\":0.0,\"a\":0.0},\"ctime0\":0,\"ctime1\":65535,\"ctime2\":0,\"ctime3\":0,\"ctime4\":0,\"ctime5\":0,\"ctime6\":0,\"ctime7\":0,\"atime0\":0,\"atime1\":65535,\"atime2\":0,\"atime3\":0,\"atime4\":0,\"atime5\":0,\"atime6\":0,\"atime7\":0,\"m_Mode\":0,\"m_NumColorKeys\":2,\"m_NumAlphaKeys\":2}}"
+            },
+            {
+                "type": "UnityEngine.Polybrush.PolyDirection, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "Brush.Direction",
+                "value": "{\"m_Value\":1}"
+            },
+            {
+                "type": "UnityEngine.Polybrush.PolyDirection, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "key": "RaiseLowerBrush.Direction",
+                "value": "{\"m_Value\":0}"
+            },
+            {
+                "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "RaiseLowerBrush.Strength",
+                "value": "{\"m_Value\":5.0}"
+            }
+        ]
     }
 }
