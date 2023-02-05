@@ -498,7 +498,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interval: 1
+  interval: 2
   enemyRoot: {fileID: 5071667592768983947}
   prefabEnemy: {fileID: 4333152194170702540, guid: 8c20039ea1c509b4c8f04aaaf3c2f525, type: 3}
 --- !u!65 &3615455218731726044

@@ -143,7 +143,7 @@ MonoBehaviour:
     name: Mogu_TFF_Mushrooms_13A
   - gameObject: {fileID: 6884831541095584853, guid: 0ab09fb2c557d724d83bc66623c9753c, type: 3}
     settings:
-      m_Strength: 71.233246
+      m_Strength: 83.67695
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -159,7 +159,7 @@ MonoBehaviour:
     name: SourceTree_d
   - gameObject: {fileID: 6129807510515480764, guid: 7cb57f3139e35cd41b8c93143b997965, type: 3}
     settings:
-      m_Strength: 100
+      m_Strength: 66.42494
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -175,7 +175,7 @@ MonoBehaviour:
     name: SourceTree_c
   - gameObject: {fileID: 2292196547690934282, guid: 2a094653680bd1e4c8877bb60bbe81d1, type: 3}
     settings:
-      m_Strength: 60.616623
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: enemy
   m_EditorClassIdentifier: 
   prefabs:
-  - gameObject: {fileID: 4333152194170702540, guid: 8c20039ea1c509b4c8f04aaaf3c2f525, type: 3}
+  - gameObject: {fileID: 7952358521080394884, guid: 90f0bb0eb78b8124b860340dc1f728bb, type: 3}
     settings:
       m_Strength: 50
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
@@ -28,4 +28,4 @@ MonoBehaviour:
       m_XScaleBool: 0
       m_YScaleBool: 0
       m_ZScaleBool: 0
-    name: Enemy
+    name: Nest

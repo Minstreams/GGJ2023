@@ -1273,7 +1273,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxHp: 20
+  maxHp: 100
   aimOffset: {x: -0.5, y: 15, z: -0.5}
   onDie:
     m_PersistentCalls:

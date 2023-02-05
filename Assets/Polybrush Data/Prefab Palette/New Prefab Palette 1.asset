@@ -31,7 +31,7 @@ MonoBehaviour:
     name: Mogu_PP_Mushroom_Fantasy_Orange_10
   - gameObject: {fileID: 3619225520766235327, guid: 2d21996c345d51d4d96e6dece671c57e, type: 3}
     settings:
-      m_Strength: 29.266762
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -79,7 +79,7 @@ MonoBehaviour:
     name: Trunk_TFF_Tree_Trunk_02A
   - gameObject: {fileID: 2292196547690934282, guid: 2a094653680bd1e4c8877bb60bbe81d1, type: 3}
     settings:
-      m_Strength: 67.752014
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -143,7 +143,7 @@ MonoBehaviour:
     name: SourceTree_c
   - gameObject: {fileID: 6884831541095584853, guid: 0ab09fb2c557d724d83bc66623c9753c, type: 3}
     settings:
-      m_Strength: 52.756035
+      m_Strength: 32.84987
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -159,7 +159,7 @@ MonoBehaviour:
     name: SourceTree_d
   - gameObject: {fileID: 1881412107397799305, guid: 3dbda4460a3b02844a50056d6469722b, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 15.495977
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
