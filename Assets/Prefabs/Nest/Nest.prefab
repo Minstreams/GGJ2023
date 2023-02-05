@@ -457,8 +457,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   mapGizmoColor: {r: 1, g: 0.108272806, b: 0, a: 0.3}
-  displayName: asd
-  displayDescription: asdasd
+  displayName: "\u654C\u4EBA\u57FA\u5730"
+  displayDescription: "\u4F1A\u751F\u654C\u4EBA"
   options: []
   onSelected:
     m_PersistentCalls:
@@ -478,7 +478,7 @@ MonoBehaviour:
   onDiselected:
     m_PersistentCalls:
       m_Calls: []
-  maxHp: 500
+  maxHp: 50
   aimOffset: {x: 0, y: 2, z: 0}
   onDie:
     m_PersistentCalls:
