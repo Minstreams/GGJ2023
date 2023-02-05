@@ -34,7 +34,7 @@ namespace IceEditor.Internal
                 }
             }
         }
-        [MenuItem("Tools/一键落地 _#D")]
+        [MenuItem("Tools/一键落地旋转 %#D")]
         public static void PutOnGroundAndRotate()
         {
             foreach (var o in Selection.objects)
