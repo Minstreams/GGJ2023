@@ -38,9 +38,13 @@ namespace IceEngine
 
             if (Physics.Raycast(new Ray(transform.position, dir), out var hit, 1000, mask))
             {
-                hurtedTarget = hit.collider.GetComponent<Hurtable>();
-                point = hit.point;
-                normal = hit.normal;
+                var tt = hit.collider.GetComponent<Hurtable>();
+                if (tt != null)
+                {
+                    hurtedTarget = tt;
+                    point = hit.point;
+                    normal = hit.normal;
+                }
             }
 
             if (hurtedTarget != null) hurtedTarget.Hurt(power, parent);
