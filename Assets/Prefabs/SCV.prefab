@@ -147,6 +147,9 @@ MonoBehaviour:
   size: {x: 1, y: 1}
   center: {x: 0, y: 0}
   viewRange: 0
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0.9666971, g: 1, b: 0.40943396, a: 0.3}
   displayName: SCV!!!
   displayDescription: SCVVVVVV
@@ -157,7 +160,7 @@ MonoBehaviour:
   onDiselected:
     m_PersistentCalls:
       m_Calls: []
-  maxHp: 0
+  maxHp: 5
   aimOffset: {x: 0, y: 0, z: 0}
   onDie:
     m_PersistentCalls:
