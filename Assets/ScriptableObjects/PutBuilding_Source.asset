@@ -16,5 +16,5 @@ MonoBehaviour:
   tip: "\u8D44\u6E90\u5854"
   price: 100
   cd: 12
-  requiredKey: 2
+  requiredKey: 
   prefabBuilding: {fileID: 578626656221675210, guid: 67e442a6b4fdc8f4f930f725542e41e0, type: 3}
