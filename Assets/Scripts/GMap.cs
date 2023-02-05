@@ -71,6 +71,14 @@ namespace IceEngine
             while (dir.y < -Height * 0.5f) dir.y += Height;
             return dir.normalized;
         }
+
+        public void UpdateHeight()
+        {
+            foreach (var u in data)
+            {
+                u.UpdateHeight();
+            }
+        }
     }
 
     public class GMapUnit
@@ -131,7 +139,27 @@ namespace IceEngine
         public GMapUnit(int x, int y)
         {
             pos = new Vector2Int(x, y);
-            if (Physics.Raycast(new Ray(new Vector3(pos.x, 128, pos.y), Vector3.down), out var hit, 1000, 1 << 6))
+        }
+
+        public void UpdateHeight()
+        {
+            int w = Ice.Gameplay.map.Width;
+            int h = Ice.Gameplay.map.Height;
+
+            RaycastHit hit = default;
+            if (Physics.Raycast(new Ray(new Vector3(pos.x, 256, pos.y), Vector3.down), out hit, 1000, 1 << 6))
+            {
+                height = hit.point.y;
+            }
+            else if (Physics.Raycast(new Ray(new Vector3(pos.x - w, 256, pos.y), Vector3.down), out hit, 1000, 1 << 6))
+            {
+                height = hit.point.y;
+            }
+            else if (Physics.Raycast(new Ray(new Vector3(pos.x - w, 256, pos.y - h), Vector3.down), out hit, 1000, 1 << 6))
+            {
+                height = hit.point.y;
+            }
+            else if (Physics.Raycast(new Ray(new Vector3(pos.x, 256, pos.y - h), Vector3.down), out hit, 1000, 1 << 6))
             {
                 height = hit.point.y;
             }

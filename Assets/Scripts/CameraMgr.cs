@@ -52,6 +52,14 @@ namespace IceEngine
             focusCamPoint.localPosition = localPos;
             focusPoint.localRotation = Quaternion.Euler(rotCurve.Evaluate(Mathf.InverseLerp(scrollRange.x, scrollRange.y, -localPos.z)), 45, 0);
 
+            // 贴地表
+            var pos = focusRoot.position;
+            if (Physics.Raycast(new Ray(new Vector3(pos.x, 256, pos.z), Vector3.down), out var hit, 1000, 1 << 6))
+            {
+                pos.y = hit.point.y;
+                focusRoot.position = pos;
+            }
+
             var right = transform.right;
             var fwd = Vector3.Cross(right, Vector3.up);
 

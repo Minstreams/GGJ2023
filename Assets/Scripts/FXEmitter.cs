@@ -10,6 +10,7 @@ namespace IceEngine
 
         public static FXEmitter Instance { get; private set; }
         void Awake() => Instance = this;
+        void Start() => Ice.Gameplay.map.UpdateHeight();
 
         public static void PlayAt(FXType fx, Vector3 pos, Quaternion? rot = null, float? size = null) => Instance._PlayAt(fx, pos, rot, size);
         public void _PlayAt(FXType fx, Vector3 pos, Quaternion? rot = null, float? size = null)

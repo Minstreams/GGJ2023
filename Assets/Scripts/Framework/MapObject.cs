@@ -151,5 +151,24 @@ namespace IceEngine
                 }
             }
         }
+
+        [Button]
+        public void PutOnGround()
+        {
+            if (Physics.Raycast(new Ray(transform.position + Vector3.up * 256, Vector3.down), out var hit, 1000, 1 << 6))
+            {
+                transform.position = hit.point;
+            }
+        }
+
+        [Button]
+        public void PutOnGroundAndRotate()
+        {
+            if (Physics.Raycast(new Ray(transform.position + Vector3.up * 256, Vector3.down), out var hit, 1000, 1 << 6))
+            {
+                transform.position = hit.point;
+                transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            }
+        }
     }
 }
