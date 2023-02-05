@@ -320,6 +320,9 @@ MonoBehaviour:
   size: {x: 5, y: 5}
   center: {x: 2, y: 2}
   viewRange: 0
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: "\u8D44\u6E90\u5854"
   displayDescription: "\u91C7\u96C6\u4E00\u5B9A\u8303\u56F4\u5185\u7684\u8D44\u6E90"
@@ -368,7 +371,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   maxHp: 150
-  aimOffset: {x: 0, y: 8, z: 0}
+  aimOffset: {x: 0, y: 4.15, z: 0}
   onDie:
     m_PersistentCalls:
       m_Calls: []

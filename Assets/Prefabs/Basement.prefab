@@ -127,7 +127,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxHp: 20
-  aimOffset: {x: 0, y: 0, z: 0}
+  aimOffset: {x: 0, y: 10.39, z: 0}
   onDie:
     m_PersistentCalls:
       m_Calls: []
