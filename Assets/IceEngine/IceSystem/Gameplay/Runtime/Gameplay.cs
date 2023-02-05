@@ -17,10 +17,6 @@ namespace Ice
             Log("Start");
             Money = Setting.initMoney;
         }
-        static void Quitting()
-        {
-            map = null;
-        }
 
         #region 玩家数据
         static int _money;
