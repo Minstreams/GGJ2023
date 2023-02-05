@@ -1222,11 +1222,12 @@ MonoBehaviour:
   mapType: 1
   size: {x: 4, y: 4}
   center: {x: 2, y: 2}
-  viewRange: 50
+  viewRange: 0
   mapGizmoColor: {r: 1, g: 0.9206716, b: 0, a: 0.3}
   displayName: "\u9632\u5FA1\u5854"
   displayDescription: "\u8FD9\u662F\u4E00\u4E2A\u9632\u5FA1\u5854"
-  options: []
+  options:
+  - {fileID: 11400000, guid: c057e605256e14e4399e6e9cb16ac136, type: 2}
   onSelected:
     m_PersistentCalls:
       m_Calls:

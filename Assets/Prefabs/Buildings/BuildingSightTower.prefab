@@ -74,8 +74,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 8, z: 0}
-  - {x: 0, y: 8, z: 1}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -141,6 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5080815090988953532}
   - component: {fileID: 5080815090988953535}
+  - component: {fileID: 3095233766101869553}
   m_Layer: 0
   m_Name: BuildingSightTower
   m_TagString: Untagged
@@ -185,7 +186,8 @@ MonoBehaviour:
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: "\u89C2\u6D4B\u5854"
   displayDescription: "\u8FD9\u662F\u4E00\u4E2A\u89C2\u6D4B\u5854"
-  options: []
+  options:
+  - {fileID: 11400000, guid: c057e605256e14e4399e6e9cb16ac136, type: 2}
   onSelected:
     m_PersistentCalls:
       m_Calls:
@@ -193,6 +195,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7283982433766672496}
+        m_TargetAssemblyTypeName: IceEngine.MaterialGroupSetter, IceRuntime
+        m_MethodName: SetColorOverride
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -223,7 +237,19 @@ MonoBehaviour:
       m_Calls: []
   onHurted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7283982433766672496}
+        m_TargetAssemblyTypeName: IceEngine.MaterialGroupSetter, IceRuntime
+        m_MethodName: SetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onBuilt:
     m_PersistentCalls:
       m_Calls:
@@ -242,6 +268,19 @@ MonoBehaviour:
   sellPrice: 100
   lr: {fileID: 5080815089681948970}
   p0: {fileID: 6091638656126194709}
+--- !u!65 &3095233766101869553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080815090988953534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 6, z: 5}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1001 &5080815090617037813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -331,6 +370,61 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 77beb9bed30c17b4ba1b1054755bd643, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
+--- !u!1 &4293142912289162168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9013638940889411661, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
+  m_PrefabInstance: {fileID: 5080815090617037813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1813381836091987319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293142912289162168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc257b46f1462314db1c6d72eb5b1a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyword: _EmissiveColor
+  time: 0.5
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 6.7698936
+      outSlope: 6.7698936
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0875
+    - serializedVersion: 3
+      time: 0.12254387
+      value: 0.99347085
+      inSlope: 0.160248
+      outSlope: 0.160248
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2134444
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.025200335
+      outSlope: -0.025200335
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25642312
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  defaultVal: 0
+  targetVal: 0
+  targetColor: {r: 0.5, g: 0.08207545, b: 0.08207545, a: 0}
 --- !u!1 &4328876160514833386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -391268320553695201, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
@@ -349,11 +443,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   euler: {x: 0.2, y: 0.4, z: 0}
+--- !u!114 &1626383359292126332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328876160514833386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc257b46f1462314db1c6d72eb5b1a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyword: _BaseColor
+  time: 0.5
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 6.7698936
+      outSlope: 6.7698936
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0875
+    - serializedVersion: 3
+      time: 0.12254387
+      value: 0.99347085
+      inSlope: 0.160248
+      outSlope: 0.160248
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2134444
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.025200335
+      outSlope: -0.025200335
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25642312
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  defaultVal: 0
+  targetVal: 0
+  targetColor: {r: 0.3962264, g: 0.008971152, b: 0.008971152, a: 0}
 --- !u!4 &4686020815585629214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
   m_PrefabInstance: {fileID: 5080815090617037813}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5351340367576895140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
+  m_PrefabInstance: {fileID: 5080815090617037813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7283982433766672496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351340367576895140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bace45d0350098488270d996e70c2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &6091638656126194709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1300264252759386080, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
@@ -377,6 +539,111 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   euler: {x: 0, y: 1, z: 0.3}
+--- !u!114 &1653690027510274414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7613758206347354417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc257b46f1462314db1c6d72eb5b1a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyword: _BaseColor
+  time: 0.5
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 6.7698936
+      outSlope: 6.7698936
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0875
+    - serializedVersion: 3
+      time: 0.12254387
+      value: 0.99347085
+      inSlope: 0.160248
+      outSlope: 0.160248
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2134444
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.025200335
+      outSlope: -0.025200335
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25642312
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  defaultVal: 0
+  targetVal: 0
+  targetColor: {r: 0.3962264, g: 0.008971152, b: 0.008971152, a: 0}
+--- !u!1 &8375435260806512117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
+  m_PrefabInstance: {fileID: 5080815090617037813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8384696998907484394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375435260806512117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc257b46f1462314db1c6d72eb5b1a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyword: _BaseColor
+  time: 0.5
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 6.7698936
+      outSlope: 6.7698936
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0875
+    - serializedVersion: 3
+      time: 0.12254387
+      value: 0.99347085
+      inSlope: 0.160248
+      outSlope: 0.160248
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2134444
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.025200335
+      outSlope: -0.025200335
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25642312
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  defaultVal: 0
+  targetVal: 0
+  targetColor: {r: 0.3962264, g: 0.008971152, b: 0.008971152, a: 0}
 --- !u!1 &9113289483999966871 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5117700066308340382, guid: 193b712665b381b4ab3681de88c06fd0, type: 3}
@@ -491,6 +758,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   euler: {x: 0.1, y: 0, z: 0.1}
+--- !u!114 &5990726410051957200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113289483999966871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc257b46f1462314db1c6d72eb5b1a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyword: _EmissiveColor
+  time: 0.5
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 6.7698936
+      outSlope: 6.7698936
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0875
+    - serializedVersion: 3
+      time: 0.12254387
+      value: 0.99347085
+      inSlope: 0.160248
+      outSlope: 0.160248
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2134444
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.025200335
+      outSlope: -0.025200335
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25642312
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  defaultVal: 0
+  targetVal: 0
+  targetColor: {r: 0.5, g: 0.08207545, b: 0.08207545, a: 0}
 --- !u!1001 &5080815090710717587
 PrefabInstance:
   m_ObjectHideFlags: 0

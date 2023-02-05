@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Default
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: bc257b46f1462314db1c6d72eb5b1a5f, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: keyword
+    value: _EmissiveColor
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: time
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].inSlope
+    value: 6.7698936
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].outSlope
+    value: 6.7698936
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[0].outWeight
+    value: 0.0875
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].time
+    value: 0.12254387
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].value
+    value: 0.99347085
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].inSlope
+    value: 0.160248
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].outSlope
+    value: 0.160248
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[1].outWeight
+    value: 0.2134444
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].inSlope
+    value: -0.025200335
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].outSlope
+    value: -0.025200335
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].inWeight
+    value: 0.25642312
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_Curve.Array.data[2].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: curve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: defaultVal
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: targetVal
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: targetColor.r
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: targetColor.g
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: targetColor.b
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: targetColor.a
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

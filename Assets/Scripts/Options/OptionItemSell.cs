@@ -12,9 +12,9 @@ namespace IceEngine
             if (obj is Building b)
             {
                 int price = b.sellPrice;
-                Destroy(b.gameObject);
+                b.Die();
                 Ice.Gameplay.Money += price;
-            } 
+            }
         }
     }
 }

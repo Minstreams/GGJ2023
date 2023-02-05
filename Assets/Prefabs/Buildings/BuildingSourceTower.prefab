@@ -319,11 +319,12 @@ MonoBehaviour:
   mapType: 1
   size: {x: 5, y: 5}
   center: {x: 2, y: 2}
-  viewRange: 50
+  viewRange: 0
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: "\u8D44\u6E90\u5854"
   displayDescription: "\u91C7\u96C6\u4E00\u5B9A\u8303\u56F4\u5185\u7684\u8D44\u6E90"
-  options: []
+  options:
+  - {fileID: 11400000, guid: c057e605256e14e4399e6e9cb16ac136, type: 2}
   onSelected:
     m_PersistentCalls:
       m_Calls:
