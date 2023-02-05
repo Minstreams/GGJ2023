@@ -15,10 +15,42 @@ MonoBehaviour:
   scripts:
   - name: 
     type: 0
-    assemblies: []
-    code: " foreach (var o in UnityEditor.Selection.objects)\r\n            {\r\n               
-      if (o is Material m)\r\n                {\r\n                    var tex =
-      m.GetTexture(\"_TextureSample\");\r\n                    if (tex != null)\r\n                   
-      {\r\n                        m.shader = Shader.Find(\"HDRP/Lit\");\r\n                       
-      m.SetTexture(\"_BaseColorMap\", tex);\r\n                    }\r\n               
+    assemblies:
+    - UnityEngine.PhysicsModule
+    - UnityEngine.TerrainPhysicsModule
+    code: "            using System.Collections.Generic;\r\n            for (int
+      j = 0; j < 8; ++j)\r\n            {\r\n                for (int k = 0; k <
+      8; ++k)\r\n                {\r\n                    int xStart = j * 128;\r\n                   
+      int yStart = k * 128;\r\n                    int xx = 128;\r\n                   
+      int l = xx + 1;\r\n\r\n\r\n                    int w = 1024, h = 1024;\r\n                   
+      List<Vector3> vs = new List<Vector3>();\r\n                    List<Vector3>
+      ns = new List<Vector3>();\r\n                    List<int> ins = new List<int>();\r\n\r\n                   
+      for (int y = 0; y < l; ++y)\r\n                    {\r\n                       
+      for (int x = 0; x < l; ++x)\r\n                        {\r\n                           
+      float height = 0;\r\n                            RaycastHit hit = new RaycastHit();\r\n                           
+      if (Physics.Raycast(new Ray(new Vector3(x + xStart, 256, y + yStart), Vector3.down),
+      out hit, 1000, 1 << 6))\r\n                            {\r\n                               
+      height = hit.point.y;\r\n                            }\r\n                           
+      else if (Physics.Raycast(new Ray(new Vector3(x + xStart - w, 256, y + yStart),
+      Vector3.down), out hit, 1000, 1 << 6))\r\n                            {\r\n                               
+      height = hit.point.y;\r\n                            }\r\n                           
+      else if (Physics.Raycast(new Ray(new Vector3(x + xStart - w, 256, y + yStart
+      - h), Vector3.down), out hit, 1000, 1 << 6))\r\n                           
+      {\r\n                                height = hit.point.y;\r\n                           
+      }\r\n                            else if (Physics.Raycast(new Ray(new Vector3(x
+      + xStart, 256, y + yStart - h), Vector3.down), out hit, 1000, 1 << 6))\r\n                           
+      {\r\n                                height = hit.point.y;\r\n                           
+      }\r\n                            vs.Add(new Vector3(x, height, y));\r\n                           
+      ns.Add(Vector3.up);\r\n                            if (x > 0 && y > 0)\r\n                           
+      {\r\n                                ins.Add((y - 1) * l + x - 1);\r\n                               
+      ins.Add((y) * l + x);\r\n                                ins.Add((y - 1) *
+      l + x);\r\n\r\n                                ins.Add((y) * l + x - 1);\r\n                               
+      ins.Add((y) * l + x);\r\n                                ins.Add((y - 1) *
+      l + x - 1);\r\n                            }\r\n                        }\r\n                   
+      }\r\n\r\n                    Mesh m = new Mesh();\r\n\r\n                   
+      m.SetVertices(vs);\r\n                    m.SetNormals(ns);\r\n                   
+      m.SetIndices(ins, MeshTopology.Triangles, 0);\r\n\r\n                    var
+      go = new GameObject(\"AA\");\r\n                    go.transform.position =
+      new Vector3(xStart, 0, yStart);\r\n                    var mf = go.AddComponent<MeshFilter>();\r\n                   
+      mf.mesh = m;\r\n                    go.AddComponent<MeshRenderer>();\r\n               
       }\r\n            }"

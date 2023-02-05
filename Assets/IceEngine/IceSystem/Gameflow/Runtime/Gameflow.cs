@@ -43,7 +43,9 @@ namespace Ice
             }
 
             // Exit
-
+            PanelSelectedObject.Instance.gameObject.SetActive(false);
+            PanelStatus.Instance.gameObject.SetActive(false);
+            PanelGameOver.Instance.gameObject.SetActive(true);
         }
 
         #region 消息机制

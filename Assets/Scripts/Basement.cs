@@ -13,6 +13,7 @@ namespace IceEngine
         private void Awake()
         {
             IsOnMap = false;
+            RestoreHP();
         }
 
         protected override void OnDie()
@@ -20,6 +21,7 @@ namespace IceEngine
             Ice.Gameplay.LockKey(key);
             FXEmitter.PlayAt(FXType.DestroyBuilding, transform.position, size: 8);
             Ice.Gameflow.SendMsg("GameOver");
+            IsOnMap = false;
         }
 
         protected override void OnSight()
