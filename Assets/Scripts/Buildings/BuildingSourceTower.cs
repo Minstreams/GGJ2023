@@ -43,7 +43,7 @@ namespace IceEngine
                         {
                             for (int i = 1 - d; i <= d; i++)
                             {
-                                var p = Pos;
+                                var p = Map[Pos].pos;
                                 if (Process(p.x - d, p.y + i)) return;
                                 if (Process(p.x + d, p.y - i)) return;
                                 if (Process(p.x - i, p.y - d)) return;

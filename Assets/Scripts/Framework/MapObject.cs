@@ -95,7 +95,7 @@ namespace IceEngine
                 {
                     if (u.Visibility > 0) TrySetVisible(true);
                 });
-                Ice.Gameplay.map.maskTex.Apply();
+                //Ice.Gameplay.map.maskTex.Apply();
             }
             else if (lastPos.Value != pNormalized)
             {
@@ -104,7 +104,7 @@ namespace IceEngine
                 ForEachUnit(u => { if (u.obj == null) u.obj = this; });
                 ForEachViewUnit(u => u.Visibility++);
                 lastPos = pNormalized;
-                Ice.Gameplay.map.maskTex.Apply();
+                //Ice.Gameplay.map.maskTex.Apply();
             }
 
             if (CameraMgr.Instance != null)
@@ -129,14 +129,14 @@ namespace IceEngine
             if (!IsOnMap) return;
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
             ForEachViewUnit(u => u.Visibility--);
-            Ice.Gameplay.map.maskTex.Apply();
+            //Ice.Gameplay.map.maskTex.Apply();
         }
         protected virtual void OnDisable()
         {
             if (!IsOnMap) return;
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
             ForEachViewUnit(u => u.Visibility--);
-            Ice.Gameplay.map.maskTex.Apply();
+            //Ice.Gameplay.map.maskTex.Apply();
             IsOnMap = false;
         }
 
