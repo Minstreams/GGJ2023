@@ -64,8 +64,10 @@ namespace IceEngine
                 if (_nodeComponentTypeSet == null)
                 {
                     _nodeComponentTypeSet = new HashSet<Type>();
+#if UNITY_EDITOR
                     var ts = UnityEditor.TypeCache.GetTypesWithAttribute<IceprintNodeAttribute>();
                     foreach (var t in ts) _nodeComponentTypeSet.Add(t);
+#endif
                 }
                 return _nodeComponentTypeSet;
             }
