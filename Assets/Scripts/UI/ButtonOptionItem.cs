@@ -9,6 +9,7 @@ namespace IceEngine
     {
         [Group("组件")]
         public Image icon;
+        public Text text;
 
         OptionItem item;
         void Start()
@@ -20,9 +21,10 @@ namespace IceEngine
         {
             this.item = item;
             icon.sprite = item.icon;
+            text.text = item.tip;
 
             var rect = GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(0, index * 144);
+            rect.anchoredPosition = new Vector2(0, -index * 144);
         }
 
         void OnClick()
