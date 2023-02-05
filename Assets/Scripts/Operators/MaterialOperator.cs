@@ -41,14 +41,17 @@ namespace IceEngine
         }
 
         [Group("Color")]
-        [ColorUsage(false, true)] public Color defaultColor;
         [ColorUsage(false, true)] public Color targetColor;
+
+        Color? defaultColor;
         [Button]
         [IceprintPort]
         public void SetColor() => SetColor(targetColor);
         [IceprintPort]
         public void SetColor(Color val)
         {
+            if (defaultColor == null) defaultColor = r.sharedMaterial.GetColor(keyword);
+
             StopAllCoroutines();
             StartCoroutine(_SetColor(val));
         }
@@ -60,10 +63,10 @@ namespace IceEngine
             {
                 yield return 0;
                 t += Time.deltaTime / time;
-                r.material.SetColor(keyword, Color.Lerp(defaultColor, val, curve.Evaluate(t)));
+                r.material.SetColor(keyword, Color.Lerp(defaultColor.Value, val, curve.Evaluate(t)));
             }
 
-            r.material.SetColor(keyword, defaultColor);
+            r.material.SetColor(keyword, defaultColor.Value);
         }
     }
 }

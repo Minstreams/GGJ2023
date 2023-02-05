@@ -14,6 +14,7 @@ namespace IceEngine
         public void Build()
         {
             RestoreHP();
+            FXEmitter.PlayAt(FXType.PutBuilding, transform.position);
             OnBuilt();
             onBuilt?.Invoke();
             Ice.Gameplay.playerTargets.Add(this);
@@ -23,6 +24,7 @@ namespace IceEngine
         protected override void OnDie()
         {
             Ice.Gameplay.playerTargets.Remove(this);
+            FXEmitter.PlayAt(FXType.DestroyBuilding, AimPos);
             Destroy(gameObject);
         }
     }

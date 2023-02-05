@@ -10,6 +10,7 @@ namespace IceEngine
         public AnimationCurve yCurve;
         public AnimationCurve zCurve;
 
+        public float intensity = 1;
         public float time;
         public Vector2 offsetRange;
 

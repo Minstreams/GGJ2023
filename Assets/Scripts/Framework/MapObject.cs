@@ -124,7 +124,6 @@ namespace IceEngine
         }
         protected virtual void OnDestroy()
         {
-            Debug.Log("OnDestroy");
             if (!IsOnMap) return;
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
             ForEachViewUnit(u => u.Visibility--);
@@ -132,7 +131,6 @@ namespace IceEngine
         }
         protected virtual void OnDisable()
         {
-            Debug.Log("OnDisable");
             if (!IsOnMap) return;
             ForEachUnit(u => { if (u.obj == this) u.obj = null; });
             ForEachViewUnit(u => u.Visibility--);
