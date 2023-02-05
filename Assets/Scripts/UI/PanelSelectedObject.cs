@@ -40,6 +40,7 @@ namespace IceEngine
             tName.text = obj.displayName;
             tDescription.text = obj.DisplayDescription;
 
+            int k = 0;
             for (int i = 0; i < obj.options.Count; i++)
             {
                 OptionItem item = obj.options[i];
@@ -47,7 +48,7 @@ namespace IceEngine
                 {
                     var option = Instantiate(prefabOptionItem, optionPanel);
                     var comp = option.GetComponent<ButtonOptionItem>();
-                    comp.Init(item, i);
+                    comp.Init(item, k++);
                     optionObjs.Add(option);
                 }
             }

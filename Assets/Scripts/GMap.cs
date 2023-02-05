@@ -40,7 +40,7 @@ namespace IceEngine
 
         // actual data
         //Texture2D tex;
-        GMapUnit[,] data = null;
+        public GMapUnit[,] data = null;
         public Texture2D maskTex = null;
 
         public GMapUnit this[Vector2Int pos] => this[pos.x, pos.y];
