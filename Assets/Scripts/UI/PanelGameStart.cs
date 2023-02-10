@@ -37,29 +37,31 @@ namespace IceEngine
         public void Enter()
         {
             if (index == 0) return;
-            switch (index)
+            Ice.Gameflow.tempAct = () =>
             {
-                case 1:
-                    b2.viewRange = 0;
-                    b3.viewRange = 0;
-                    CameraMgr.Instance.focusRoot.position = b1.transform.position;
-                    break;
-                case 2:
-                    b1.viewRange = 0;
-                    b3.viewRange = 0;
-                    CameraMgr.Instance.focusRoot.position = b2.transform.position;
-                    break;
-                case 3:
-                    b1.viewRange = 0;
-                    b2.viewRange = 0;
-                    CameraMgr.Instance.focusRoot.position = b3.transform.position;
-                    break;
-            }
+                switch (index)
+                {
+                    case 1:
+                        b2.viewRange = 0;
+                        b3.viewRange = 0;
+                        CameraMgr.Instance.focusRoot.position = b1.transform.position;
+                        break;
+                    case 2:
+                        b1.viewRange = 0;
+                        b3.viewRange = 0;
+                        CameraMgr.Instance.focusRoot.position = b2.transform.position;
+                        break;
+                    case 3:
+                        b1.viewRange = 0;
+                        b2.viewRange = 0;
+                        CameraMgr.Instance.focusRoot.position = b3.transform.position;
+                        break;
+                }
 
-            b1.IsOnMap = true;
-            b2.IsOnMap = true;
-            b3.IsOnMap = true;
-
+                b1.IsOnMap = true;
+                b2.IsOnMap = true;
+                b3.IsOnMap = true;
+            };
             Ice.Gameflow.SendMsg("Start");
             gameObject.SetActive(false);
         }

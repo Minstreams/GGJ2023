@@ -95,6 +95,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459117529610313
 GameObject:
@@ -191,6 +195,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459117542999133
 GameObject:
@@ -287,6 +295,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118130111384
 GameObject:
@@ -383,6 +395,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118235506025
 GameObject:
@@ -479,6 +495,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118271637157
 GameObject:
@@ -575,6 +595,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118339926893
 GameObject:
@@ -671,6 +695,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118505580573
 GameObject:
@@ -814,6 +842,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118743741661
 GameObject:
@@ -910,6 +942,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118754898273
 GameObject:
@@ -1006,6 +1042,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118854574766
 GameObject:
@@ -1102,6 +1142,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118931108008
 GameObject:
@@ -1198,6 +1242,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459118979588655
 GameObject:
@@ -1294,6 +1342,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459119116794985
 GameObject:
@@ -1390,6 +1442,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459119209646584
 GameObject:
@@ -1486,6 +1542,10 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
 --- !u!1 &6769459119300176374
 GameObject:
@@ -1582,4 +1642,8 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 1
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}

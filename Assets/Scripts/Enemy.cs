@@ -14,12 +14,14 @@ namespace IceEngine
         public Hurtable Target { get; private set; }
         public Nest Parent { get; set; }
 
+        public override bool IsDynamic => true;
+
         Weapon weapon;
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             weapon = GetComponentInChildren<Weapon>();
         }
-
 
         List<Vector2Int> path = new List<Vector2Int>();
         public bool Go()

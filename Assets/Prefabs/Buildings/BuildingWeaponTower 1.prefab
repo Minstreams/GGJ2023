@@ -829,7 +829,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 14136ded9727d5b4abdd0e71ae8c121f, type: 2}
+  - {fileID: 2100000, guid: de089254dc534b2438a02a4e09d4db3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1223,12 +1223,13 @@ MonoBehaviour:
   size: {x: 8, y: 8}
   center: {x: 4, y: 4}
   viewRange: 0
+  isTerrain: 0
   onSight:
     m_PersistentCalls:
       m_Calls: []
   mapGizmoColor: {r: 1, g: 0.9206716, b: 0, a: 0.3}
-  displayName: "\u8D85\u7EA7\u9632\u5FA1\u5854"
-  displayDescription: "\u8FD9\u662F\u4E00\u4E2A\u9632\u5FA1\u5854"
+  displayName: "\u6FC0\u5149\u70AE\u53F0"
+  displayDescription: "\u676D\u5DDE\u5236\u9020\uFF0C\u5728\u57FA\u7840\u653B\u51FB\u70AE\u53F0\u4E0A\u52A0\u5927\u8BA1\u91CF\u7684\u5B9E\u9A8C\u4EA7\u7269\u3002\n\n\u84C4\u80FD\u65F6\u95F4\u66F4\u4E45\uFF0C\u4F46\u5A01\u529B\u4E0D\u4FD7\u3002"
   options:
   - {fileID: 11400000, guid: c057e605256e14e4399e6e9cb16ac136, type: 2}
   onSelected:
@@ -1273,7 +1274,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxHp: 100
+  maxHp: 50
   aimOffset: {x: -0.5, y: 15, z: -0.5}
   onDie:
     m_PersistentCalls:
@@ -1380,8 +1381,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  sellPrice: 80
-  range: 60
+  sellPrice: 30
+  range: 30
 --- !u!65 &1524359792547912963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1653,11 +1654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 881550521255093486, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: power
-      value: 8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 881550521255093486, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: interval
-      value: 0.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 881550521255093486, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: onFire.m_PersistentCalls.m_Calls.Array.data[3].m_Target
@@ -1673,7 +1674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 881550521255093487, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 15.038475
       objectReference: {fileID: 0}
     - target: {fileID: 881550521255093487, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1707,6 +1708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3824280600884302213, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 703af630f10f1a64e92b80be7fe1b15f, type: 2}
     - target: {fileID: 7247344053665693924, guid: 6f0d252074c6874479de7e5baba65adb, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -1743,15 +1748,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4775270373148647750, guid: ebf6a8e6ef7c1a940b24c25bd50a64f5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 120
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4775270373148647750, guid: ebf6a8e6ef7c1a940b24c25bd50a64f5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 120
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4775270373148647750, guid: ebf6a8e6ef7c1a940b24c25bd50a64f5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 120
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4775270373148647750, guid: ebf6a8e6ef7c1a940b24c25bd50a64f5, type: 3}
       propertyPath: m_LocalPosition.x

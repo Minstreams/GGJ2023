@@ -25,6 +25,13 @@ namespace IceEngine
 
         public static CameraMgr Instance { get; private set; }
 
+        public void Focus(Vector3 pos)
+        {
+            focusRoot.position = pos;
+            var p = focusCamPoint.localPosition;
+            p.z = -50;
+            focusCamPoint.localPosition = p;
+        }
         void Awake()
         {
             Instance = this;
@@ -35,9 +42,10 @@ namespace IceEngine
             transform.position += (focusCamPoint.position - transform.position) * (1 - Mathf.Pow(1 - focusRate, Time.deltaTime));
             transform.rotation = Quaternion.Lerp(transform.rotation, focusCamPoint.rotation, 1 - Mathf.Pow(1 - focusRate, Time.deltaTime));
 
+            // 聚焦
             if (Ice.Gameplay.SelectedObject != null && Input.GetKeyDown(KeyCode.Space))
             {
-                focusRoot.position = Ice.Gameplay.SelectedObject.transform.position;
+                Focus(Ice.Gameplay.SelectedObject.transform.position);
             }
 
             // 滚轮缩放

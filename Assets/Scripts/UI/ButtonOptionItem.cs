@@ -21,10 +21,10 @@ namespace IceEngine
         {
             this.item = item;
             icon.sprite = item.icon;
-            text.text = item.tip;
+            text.text = $"{item.tip}\n{item.Price}";
 
             var rect = GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(0, -index * 144);
+            rect.anchoredPosition = new Vector2(0, index * 144);
         }
 
         void OnClick()

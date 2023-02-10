@@ -11,7 +11,7 @@ namespace IceEngine
     {
         [Group("功能")]
         public string displayName;
-        [Multiline]
+        [Multiline(10)]
         public string displayDescription;
 
         protected virtual string DisplayDescriptionExtra => "";
@@ -21,6 +21,7 @@ namespace IceEngine
 
         void OnMouseDown()
         {
+            if (Input.mousePosition.x > Screen.width * 0.8f) return;
             if (!IsOnMap) return;
             Ice.Gameplay.Log("Select" + gameObject.name);
             Ice.Gameplay.SelectObject(this);
@@ -36,8 +37,5 @@ namespace IceEngine
         {
             onDiselected?.Invoke();
         }
-
-        protected virtual void OnBecomeVisible() { }
-        protected virtual void OnBecomeInvisible() { }
     }
 }

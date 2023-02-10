@@ -50,6 +50,9 @@ MonoBehaviour:
   size: {x: 1, y: 1}
   center: {x: 0, y: 0}
   viewRange: 0
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: "\u8611\u83C7"
   displayDescription: "\u6211\u4EEC\u662F\u4E00\u7FA4\u8611\u83C7"
@@ -87,15 +90,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7444073059984672769, guid: 41893cb09f7855741a654324baf6d9e4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.4937162
+      value: 4.4996614
       objectReference: {fileID: 0}
     - target: {fileID: 7444073059984672769, guid: 41893cb09f7855741a654324baf6d9e4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.4937162
+      value: 4.4996614
       objectReference: {fileID: 0}
     - target: {fileID: 7444073059984672769, guid: 41893cb09f7855741a654324baf6d9e4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.4937162
+      value: 4.4996614
       objectReference: {fileID: 0}
     - target: {fileID: 7444073059984672769, guid: 41893cb09f7855741a654324baf6d9e4, type: 3}
       propertyPath: m_LocalPosition.x

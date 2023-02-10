@@ -27,7 +27,7 @@ namespace IceEditor.Internal
             {
                 if (o is GameObject g)
                 {
-                    foreach (var mo in g.GetComponents<MapObject>())
+                    foreach (var mo in g.GetComponentsInChildren<MapObject>())
                     {
                         mo.PutOnGround();
                     }
@@ -41,7 +41,7 @@ namespace IceEditor.Internal
             {
                 if (o is GameObject g)
                 {
-                    foreach (var mo in g.GetComponents<MapObject>())
+                    foreach (var mo in g.GetComponentsInChildren<MapObject>())
                     {
                         mo.PutOnGroundAndRotate();
                     }

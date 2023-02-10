@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 9e9f011176bd62d4692b2c53460a42a5, type: 3}
   tip: "\u8D85\u7EA7\u89C2\u5BDF\u5854"
-  price: 100
+  price: 50
   cd: 12
   requiredKey: 1
   prefabBuilding: {fileID: 5080815090988953534, guid: 839106d3c827e7141bbf7d44e2738974, type: 3}

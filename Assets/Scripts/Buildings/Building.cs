@@ -33,5 +33,9 @@ namespace IceEngine
             if (Houmen.godMode) return;
             base.OnHurted(delta, attacker);
         }
+
+        protected override void OutSight()
+        {
+        }
     }
 }

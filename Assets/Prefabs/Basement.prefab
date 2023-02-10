@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 2696419498743217959}
   - component: {fileID: 172119509057690663}
   - component: {fileID: 2299276450108364676}
+  - component: {fileID: 1222327550085083961}
   m_Layer: 7
   m_Name: Basement
   m_TagString: Untagged
@@ -100,19 +101,43 @@ MonoBehaviour:
   size: {x: 16, y: 16}
   center: {x: 8, y: 8}
   viewRange: 50
+  isTerrain: 0
   onSight:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1222327550085083961}
+        m_TargetAssemblyTypeName: IceEngine.Hinter, IceRuntime
+        m_MethodName: ShowHint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1222327550085083961}
+        m_TargetAssemblyTypeName: IceEngine.Hinter, IceRuntime
+        m_MethodName: TriggerHint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
   displayName: "\u57FA\u5730"
-  displayDescription: "\u55EF\u55EF"
+  displayDescription: "\u901A\u5411\u4EBA\u7C7B\u5730\u4E0B\u57CE\uFF0C\u76EE\u524D\u5DF2\u5173\u95ED\u3002\n\n\u5730\u4E0B\u57CE\u662F\u4EBA\u7C7B\u6700\u540E\u7684\u5BB6\u56ED\uFF0C\u662F\u4EBA\u7C7B\u4E3A\u8EB2\u907F\u751F\u5316\u79CD\u65CF\u706D\u4EA1\uFF0C\u667A\u68B0\u5371\u673A\u9020\u51FA\u7684\u907F\u96BE\u6240\u3002"
   options:
   - {fileID: 11400000, guid: 886decc6acb97bb459a49cbfffae93b5, type: 2}
-  - {fileID: 11400000, guid: 1f50ee1d7edbb1f44a7934460b0359d6, type: 2}
   - {fileID: 11400000, guid: f1c9a52274a2cdd40948f6cc2118eb85, type: 2}
-  - {fileID: 11400000, guid: a899f2994b9c9b140aceb251daa90395, type: 2}
-  - {fileID: 11400000, guid: e9b6b40bb1ac50745b6f607c4a3f286b, type: 2}
   - {fileID: 11400000, guid: bce66b9f184ce7342a1e6c425163d37d, type: 2}
+  - {fileID: 11400000, guid: 594a62fecef187542aa3ae990efe11f0, type: 2}
+  - {fileID: 11400000, guid: fe54de9d24bbccb4fa48abcb2690d56c, type: 2}
   onSelected:
     m_PersistentCalls:
       m_Calls:
@@ -167,6 +192,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16, y: 8, z: 16}
   m_Center: {x: -0.5, y: 4, z: -0.5}
+--- !u!114 &1222327550085083961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696419498743217958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc39e58e3a33244496c0201edb04279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: SeeBasement
+  hint: 
 --- !u!1 &3524451059299339844
 GameObject:
   m_ObjectHideFlags: 0

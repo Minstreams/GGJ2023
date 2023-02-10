@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PutBuilding_Weapon
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d40e9aabc9b1ff149b0b4daf7b4c2513, type: 3}
-  tip: "\u9632\u5FA1\u5854"
-  price: 100
+  tip: "\u653B\u51FB\u70AE\u53F0"
+  price: 20
   cd: 12
   requiredKey: 
   prefabBuilding: {fileID: 8849846825322433588, guid: b0583f1a6c5bd9d489d6300d714ee7da, type: 3}

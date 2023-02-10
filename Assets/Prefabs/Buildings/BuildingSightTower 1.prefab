@@ -268,7 +268,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  sellPrice: 100
+  sellPrice: 50
   lr: {fileID: 5080815089681948970}
   p0: {fileID: 6091638656126194709}
 --- !u!65 &3095233766101869553

@@ -24,7 +24,7 @@ namespace IceEngine
         {
             while (true)
             {
-                yield return 0;
+                yield return Ice.Gameplay.inter3;
 
                 if (Target == null || !Target.IsOnMap || Mathf.Max(Mathf.Abs(Target.Pos.x - Pos.x), Mathf.Abs(Target.Pos.y - Pos.y)) > range)
                 {
@@ -49,9 +49,10 @@ namespace IceEngine
 
                     bool Process(int x, int y)
                     {
-                        if (Map[x, y].obj is Enemy or Nest)
+                        var obj = Map[x, y].Obj;
+                        if (obj is Enemy or Nest && obj.IsOnMap)
                         {
-                            Target = Map[x, y].obj as Hurtable;
+                            Target = obj as Hurtable;
                             return true;
                         }
                         return false;

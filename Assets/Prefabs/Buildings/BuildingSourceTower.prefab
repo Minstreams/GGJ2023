@@ -320,6 +320,7 @@ MonoBehaviour:
   size: {x: 5, y: 5}
   center: {x: 2, y: 2}
   viewRange: 0
+  isTerrain: 0
   onSight:
     m_PersistentCalls:
       m_Calls: []
@@ -405,10 +406,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  sellPrice: 100
+  sellPrice: 0
   range: 40
   interval: 1
   scvRoot: {fileID: 9037683845546321053}
+  grassInterval: 0.2
   speed: 4
 --- !u!65 &7489719328169308157
 BoxCollider:

@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 377570430662137826}
-  - component: {fileID: 6890701346347221229}
+  - component: {fileID: 2049942706096120685}
   m_Layer: 0
   m_Name: Rock_TFF_Rock_Small_03A
   m_TagString: Untagged
@@ -130,7 +130,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6890701346347221229
+--- !u!114 &2049942706096120685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,11 +139,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 8460565683733240807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9832e5e3055b354cb1f121e9be1a153, type: 3}
+  m_Script: {fileID: 11500000, guid: b83d80e3df82e3848b2a0298a451c5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapType: 5
+  mapType: 3
   size: {x: 1, y: 1}
   center: {x: 0, y: 0}
   viewRange: 0
+  onSight:
+    m_PersistentCalls:
+      m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
+  displayName: "\u77F3\u5934"
+  displayDescription: "\u53EF\u4EE5\u88AB\u56DE\u6536\u4E3A\u8D44\u6E90"
+  options: []
+  onSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  onDiselected:
+    m_PersistentCalls:
+      m_Calls: []
+  money: 1

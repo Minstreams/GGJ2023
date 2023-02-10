@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2775489623151805854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.1494038, y: 1.1494038, z: 1.1494038}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3502084826851935546}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3502084826851935546}
-  - component: {fileID: 2550747107494595849}
+  - component: {fileID: 5095037137213237266}
   m_Layer: 0
   m_Name: Trunk_TFF_Tree_Trunk_02A
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2550747107494595849
+--- !u!114 &5095037137213237266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,14 +125,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 2966463913984635397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9832e5e3055b354cb1f121e9be1a153, type: 3}
+  m_Script: {fileID: 11500000, guid: b83d80e3df82e3848b2a0298a451c5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapType: 0
-  size: {x: 0, y: 0}
+  mapType: 3
+  size: {x: 1, y: 1}
   center: {x: 0, y: 0}
   viewRange: 0
+  isTerrain: 0
   onSight:
     m_PersistentCalls:
       m_Calls: []
   mapGizmoColor: {r: 0, g: 1, b: 0, a: 0.3}
+  displayName: 
+  displayDescription: 
+  options: []
+  onSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  onDiselected:
+    m_PersistentCalls:
+      m_Calls: []
+  money: 0

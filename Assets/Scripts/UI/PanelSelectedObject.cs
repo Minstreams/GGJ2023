@@ -54,11 +54,6 @@ namespace IceEngine
             }
         }
 
-        void Update()
-        {
-            Ice.Gameplay.map.maskTex.Apply();
-        }
-
         //private void OnDrawGizmos()
         //{
         //    var map = Ice.Gameplay.map;

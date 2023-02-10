@@ -16,6 +16,33 @@ namespace Ice
         {
             Log("Start");
             Money = Setting.initMoney;
+            StartCoroutine(SmallUpdate());
+        }
+
+        public static WaitForSeconds inter = new WaitForSeconds(1);
+        public static WaitForSeconds inter2 = new WaitForSeconds(0.5f);
+        public static WaitForSeconds inter3 = new WaitForSeconds(0.1f);
+        public static List<MapObject> onSmallUpdateList = new List<MapObject>();
+        static int iter = 0;
+        static int maxIter = 256;
+        static IEnumerator SmallUpdate()
+        {
+            while (true)
+            {
+                yield return inter2;
+                int count = onSmallUpdateList.Count;
+                if (count > 0)
+                {
+                    int max = Mathf.Max(maxIter, count);
+                    for (int i = 0; i < max; i++)
+                    {
+                        if (iter >= onSmallUpdateList.Count) iter = 0;
+                        onSmallUpdateList[iter].SmallUpdate();
+                        iter++;
+                    }
+                }
+                map.maskTex.Apply();
+            }
         }
 
         #region 玩家数据

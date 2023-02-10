@@ -23,12 +23,14 @@ namespace IceEngine
 
         protected override void OnSight()
         {
+            base.OnSight();
             StartCoroutine(_Main());
         }
 
         protected override void OutSight()
         {
             StopAllCoroutines();
+            base.OutSight();
         }
 
         IEnumerator _Main()
@@ -74,7 +76,6 @@ namespace IceEngine
         public void Recycle(Enemy e)
         {
             e.gameObject.SetActive(false);
-            e.IsOnMap = false;
             emyStack.Push(e);
         }
 

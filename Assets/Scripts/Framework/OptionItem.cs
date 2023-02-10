@@ -14,6 +14,8 @@ namespace IceEngine
 
         public string requiredKey;
 
+        public virtual string Price => price.ToString();
+
         public virtual void OnClick(Selectable obj)
         {
             // price

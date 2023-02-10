@@ -16,15 +16,24 @@ namespace IceEngine
         public Vector2Int center = Vector2Int.zero;
 
         public int viewRange = 0;
+        public bool isTerrain = false;
 
         public Vector2Int Pos => transform.position.ToGridPos();
+        public virtual bool IsDynamic => false;
 
         protected GMap Map => Ice.Gameplay.map;
         Vector2Int? lastPos = null;
+        Renderer[] rs = null;
 
         public bool IsOnMap { get; set; } = true;
         public bool IsVisible { get; private set; } = false;
 
+        protected virtual void Awake()
+        {
+            rs = GetComponentsInChildren<Renderer>(true);
+            OutSight();
+            Ice.Gameplay.onSmallUpdateList.Add(this);
+        }
         public void TrySetVisible(bool visible)
         {
             if (visible == IsVisible) return;
@@ -52,8 +61,22 @@ namespace IceEngine
         }
 
         public SimpleEvent onSight;
-        protected virtual void OnSight() { }
-        protected virtual void OutSight() { }
+        protected virtual void OnSight()
+        {
+            if (rs != null)
+            {
+                foreach (var r in rs) r.enabled = true;
+            }
+        }
+        protected virtual void OutSight()
+        {
+            if (isTerrain) return;
+            if (size == Vector2Int.zero) return;
+            if (rs != null)
+            {
+                foreach (var r in rs) r.enabled = false;
+            }
+        }
 
         public void ForEachUnit(System.Action<GMapUnit> action, Vector2Int? posOverride = null)
         {
@@ -81,15 +104,17 @@ namespace IceEngine
                 }
             }
         }
-        protected virtual void LateUpdate()
+        public virtual void SmallUpdate()
         {
+            if (!enabled) return;
             if (!IsOnMap) return;
+            if (!isTerrain && lastPos != null && !IsVisible) return;
             var p = Pos;
-            var pNormalized = Map[Pos].pos;
+            var pNormalized = Map[p].pos;
             if (lastPos == null)
             {
                 lastPos = pNormalized;
-                ForEachUnit(u => { if (u.obj == null) u.obj = this; });
+                ForEachUnit(u => u.objList.Add(this));
                 ForEachViewUnit(u => u.Visibility++);
                 ForEachUnit(u =>
                 {
@@ -97,11 +122,11 @@ namespace IceEngine
                 });
                 //Ice.Gameplay.map.maskTex.Apply();
             }
-            else if (lastPos.Value != pNormalized)
+            else if (IsDynamic && lastPos.Value != pNormalized)
             {
-                ForEachUnit(u => { if (u.obj == this) u.obj = null; }, lastPos);
+                ForEachUnit(u => u.objList.Remove(this), lastPos);
                 ForEachViewUnit(u => u.Visibility--, lastPos);
-                ForEachUnit(u => { if (u.obj == null) u.obj = this; });
+                ForEachUnit(u => u.objList.Add(this));
                 ForEachViewUnit(u => u.Visibility++);
                 lastPos = pNormalized;
                 //Ice.Gameplay.map.maskTex.Apply();
@@ -126,16 +151,21 @@ namespace IceEngine
         }
         protected virtual void OnDestroy()
         {
+            Ice.Gameplay.onSmallUpdateList.Remove(this);
             if (!IsOnMap) return;
-            ForEachUnit(u => { if (u.obj == this) u.obj = null; });
+            ForEachUnit(u => u.objList.Remove(this));
             ForEachViewUnit(u => u.Visibility--);
             //Ice.Gameplay.map.maskTex.Apply();
         }
+        protected virtual void OnEnable()
+        {
+        }
         protected virtual void OnDisable()
         {
+
             if (!IsOnMap) return;
-            ForEachUnit(u => { if (u.obj == this) u.obj = null; });
-            ForEachViewUnit(u => u.Visibility--);
+            ForEachUnit(u => u.objList.Remove(this), lastPos);
+            ForEachViewUnit(u => u.Visibility--, lastPos);
             //Ice.Gameplay.map.maskTex.Apply();
             IsOnMap = false;
         }
@@ -144,7 +174,7 @@ namespace IceEngine
         protected virtual void OnDrawGizmos()
         {
             using var _ = new GizmosColorScope(mapGizmoColor);
-            Gizmos.DrawCube(transform.position + size.ToWorldPos(true) * 0.5f - new Vector3(0.5f, 0, 0.5f) - center.ToWorldPos(true), new Vector3(size.x, 1, size.y));
+            Gizmos.DrawCube(transform.position.Snap(1) + size.ToWorldPos(true) * 0.5f - new Vector3(0.5f, 0, 0.5f) - center.ToWorldPos(true), new Vector3(size.x, 1, size.y));
             if (viewRange > 0)
             {
                 using (new GizmosColorScope(new Color(1, 0, 0.7f)))

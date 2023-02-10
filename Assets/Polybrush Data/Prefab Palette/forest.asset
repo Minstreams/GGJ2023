@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 7305066057902048564, guid: 5277392fe5ecf5e49a03e8bd0041117e, type: 3}
     settings:
-      m_Strength: 2.7251983
+      m_Strength: 53.15416
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -95,7 +95,7 @@ MonoBehaviour:
     name: Grass_b
   - gameObject: {fileID: 2026016878694626597, guid: 0b822e40b46daaa40869b73247348e09, type: 3}
     settings:
-      m_Strength: 1
+      m_Strength: 33.247993
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -111,7 +111,7 @@ MonoBehaviour:
     name: Rock_PP_Rock_Pile_Forest_Moss_05
   - gameObject: {fileID: 6383811874425920676, guid: 11a30ab4b0be9534581513e677c85c1a, type: 3}
     settings:
-      m_Strength: 1
+      m_Strength: 51.82708
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -143,7 +143,7 @@ MonoBehaviour:
     name: Rock_TFF_Rock_Medium_05A
   - gameObject: {fileID: 8460565683733240807, guid: 1d6d68b80b6c874438ccf29a661e0730, type: 3}
     settings:
-      m_Strength: 11.514748
+      m_Strength: 43.864613
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}

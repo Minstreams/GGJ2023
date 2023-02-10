@@ -12,5 +12,6 @@ namespace IceEngine.Internal
         public int initMoney = 1000;
 
         public GameObject prefabScv;
+        public GameObject prefabGrass;
     }
 }

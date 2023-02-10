@@ -13,12 +13,13 @@ namespace IceEngine
         public Source Target { get; private set; }
         public float Speed { get; private set; }
         public int Money { get; private set; }
-        public BuildingSourceTower Tower { get; set; }
+        public BuildingSightTower Tower { get; set; }
+        public override bool IsDynamic => true;
 
         List<Vector2Int> path = new List<Vector2Int>();
         public bool Go(Source target, float speed)
         {
-            if (Astar.FindingPath(Pos, target.Pos, path, mapType, 8))
+            if (Astar.FindingPath(Pos, target.Pos, path, mapType, 64))
             {
                 Target = target;
                 Speed = speed;
@@ -26,7 +27,6 @@ namespace IceEngine
 
                 target.CurSCV = this;
 
-                Ice.Gameplay.playerTargets.Add(this);
                 StartCoroutine(_Go());
 
                 return true;
@@ -84,6 +84,18 @@ namespace IceEngine
         protected override void OnDie()
         {
             Tower.RecycleSCV(this);
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            Ice.Gameplay.playerTargets.Add(this);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            Ice.Gameplay.playerTargets.Remove(this);
         }
     }
 }

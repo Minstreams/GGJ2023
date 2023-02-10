@@ -1223,12 +1223,13 @@ MonoBehaviour:
   size: {x: 4, y: 4}
   center: {x: 2, y: 2}
   viewRange: 0
+  isTerrain: 0
   onSight:
     m_PersistentCalls:
       m_Calls: []
   mapGizmoColor: {r: 1, g: 0.9206716, b: 0, a: 0.3}
-  displayName: "\u9632\u5FA1\u5854"
-  displayDescription: "\u8FD9\u662F\u4E00\u4E2A\u9632\u5FA1\u5854"
+  displayName: "\u653B\u51FB\u70AE\u53F0"
+  displayDescription: "\u653B\u51FB\u70AE\u53F0\u53EF\u4EE5\u653B\u51FB\u5468\u56F4\u654C\u5BF9\u65B9\u548C\u969C\u788D\u7269\uFF0C\u4FDD\u62A4\u7F51\u7EDC\u795E\u7ECF\u642D\u5EFA\u4E0D\u53D7\u5F71\u54CD\u3002"
   options:
   - {fileID: 11400000, guid: c057e605256e14e4399e6e9cb16ac136, type: 2}
   onSelected:
@@ -1380,7 +1381,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  sellPrice: 80
+  sellPrice: 15
   range: 30
 --- !u!65 &1524359792547912963
 BoxCollider:

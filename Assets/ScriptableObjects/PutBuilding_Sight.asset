@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PutBuilding_Sight
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 9e9f011176bd62d4692b2c53460a42a5, type: 3}
-  tip: "\u89C2\u5BDF\u5854"
-  price: 100
+  tip: "\u751F\u6001\u7AD9"
+  price: 50
   cd: 12
   requiredKey: 
   prefabBuilding: {fileID: 5080815090988953534, guid: 0f1cebe3dac72fd48a8ddbde4821dc92, type: 3}

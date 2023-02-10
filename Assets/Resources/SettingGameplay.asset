@@ -16,3 +16,4 @@ MonoBehaviour:
   mapSize: {x: 1024, y: 1024}
   initMoney: 300
   prefabScv: {fileID: 1481269195534070897, guid: 616adb4053229174eb9b7374385a966c, type: 3}
+  prefabGrass: {fileID: 1318709540744739683, guid: 6ca3a558ea5b63d439fe4f517c314a07, type: 3}

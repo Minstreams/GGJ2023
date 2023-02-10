@@ -12,8 +12,9 @@ namespace IceEngine
         public static List<Basement> bs = new List<Basement>();
 
         public string key;
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             IsOnMap = false;
             RestoreHP();
         }
@@ -22,8 +23,9 @@ namespace IceEngine
         {
             Ice.Gameplay.LockKey(key);
             FXEmitter.PlayAt(FXType.DestroyBuilding, transform.position, size: 8);
+            CameraMgr.Instance.Focus(transform.position);
             Ice.Gameflow.SendMsg("GameOver");
-            IsOnMap = false;
+            Destroy(gameObject);
         }
 
         protected override void OnSight()

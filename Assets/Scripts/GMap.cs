@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace IceEngine
@@ -98,9 +99,9 @@ namespace IceEngine
         {
             get
             {
-                if (obj != null)
+                if (Obj != null)
                 {
-                    return obj.mapType;
+                    return Obj.mapType;
                 }
                 return GMapType.Path;
             }
@@ -108,7 +109,8 @@ namespace IceEngine
         //=> obj != null ? obj.mapType : GMapType.Path;
 
         public Vector2Int pos;
-        public MapObject obj;
+        public List<MapObject> objList = new List<MapObject>();
+        public MapObject Obj => objList.Any() ? objList[0] : null;
         public float height;
 
         int _visibility;
@@ -126,9 +128,9 @@ namespace IceEngine
                         Ice.Gameplay.map.maskTex.SetPixel(pos.x, pos.y, value > 0 ? Color.white : Color.black);
                         //Ice.Gameplay.map.maskTex.Apply();
 
-                        if (obj != null)
+                        if (objList.Any())
                         {
-                            obj.TrySetVisible(value > 0);
+                            foreach (var obj in objList) obj.TrySetVisible(value > 0);
                         }
                     }
                     _visibility = value;
